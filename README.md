@@ -4,7 +4,7 @@
 
 #### Membres
 
-<table border="1" id="bkmrk-nom-pr%C3%A9nom-email-tob" style="border-collapse: collapse; width: 100%;"><colgroup><col style="width: 50%;"></col><col style="width: 50%;"></col></colgroup><tbody><tr><td>**Nom Prénom**</td><td>**Email**</td></tr><tr><td>TOBBAL Yannis</td><td><tobbalya@gmail.com></td></tr><tr><td>ARIDI Rami</td><td><rami.aridi@etu.sorbonne-universite.fr></td></tr><tr><td>SKARLEAS Vasilis</td><td><vasileios.skarleas@etu.sorbonne-universite.fr></td></tr></tbody></table>
+TOBBAL Yannis, ARIDI Rami, SKARLEAS Vasilis
 
 #### Cursus
 
