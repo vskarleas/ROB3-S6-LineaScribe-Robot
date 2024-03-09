@@ -7,7 +7,9 @@
 #### Membres
 
 TOBBAL Yannis :	tobbalya@gmail.com
+
 ARIDI Rami :	rami.aridi@etu.sorbonne-universite.fr
+
 SKARLEAS Vasilis :	vasileios.skarleas@etu.sorbonne-universite.fr
 
 #### Cursus
