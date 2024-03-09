@@ -1,10 +1,12 @@
 # Projet ROB3: Rami, Yannis, Vasilis
 
+## **LineaScribe Robot**
+
 ### **Informations**
 
 #### Membres
 
-TOBBAL Yannis, ARIDI Rami, SKARLEAS Vasilis
+<table border="1" id="bkmrk-nom-pr%C3%A9nom-email-tob" style="border-collapse: collapse; width: 100%;"><colgroup><col style="width: 50%;"></col><col style="width: 50%;"></col></colgroup><tbody><tr><td>**Nom Prénom**</td><td>**Email**</td></tr><tr><td>TOBBAL Yannis</td><td><tobbalya@gmail.com></td></tr><tr><td>ARIDI Rami</td><td><rami.aridi@etu.sorbonne-universite.fr></td></tr><tr><td>SKARLEAS Vasilis</td><td><vasileios.skarleas@etu.sorbonne-universite.fr></td></tr></tbody></table>
 
 #### Cursus
 
@@ -74,7 +76,7 @@ Les moyens qu'on a à notre disposition sont les suivantes:
 
 #### Machines utilisées
 
-Utilisation de l'impression 3D pour les pièces principales et éventuellement de la technologie de découpe laser pour la surface d'écriture de notre robot.
+Utilisation de l'impression 3D pour des pièces sofistqiues et éventuellement de la technologie de découpe laser pour les autres pieces.
 
 ### **Diagramme de GANTT**
 
@@ -309,9 +311,74 @@ Sur notre schéma électronique il y a un bouton qui permet de changer entre mod
 
 #### Modélisation
 
+Notre objectif principal était de modéliser le robot selon un design à la fois compact et rigide. Un autre aspect important était de minimiser la quantité de matière utilisée et de réduire au maximum le temps de fabrication. Un modèle assemblé sur SolidWorks est disponible ci-dessous.
+
+[![displayRobot.gif](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/displayrobot.gif)Figure 9: Demonstration du mécanisme du robot LineaScribe](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/displayrobot.gif)
+
+
+##### Sous-assemblages
+
+1. Bâti support
+2. Articulations parallèles
+3. Pivot joint
+4. Pivot motor
+5. Axe d'effecteur
+
+##### Bâti support
+
+C'est le corps principal du robot. Son objectif principal est de maintenir les deux moteurs sur le même axe de rotation. Il doit être capable de supporter les forces exercées par les moteurs vers les articulations parallèles ainsi que le retour d'information de ces forces.
+
+[![Screenshot 2024-03-09 at 8.15.57 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-15-57-pm.png)Figure 10: Bâti support du robot avec les moteur assemblés](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-15-57-pm.png)
+
+Le bâti est entièrement créé en utilisant la découpe laser. Concernant la conception de la pièce, il faut noter que le plan du moteur du haut (moteur 1) est conceptualisé de manière à ne pas permettre le détachement des pièces tout en acceptant un stress excessif par les articulations principales du robot.
+
+##### Articulations parallèles
+
+Elles sont également entièrement conceptualisées pour la découpe laser (3 couches différentes de 3 mm). Elles sont montées sur les pièces "pivot joint" et "pivot motor" en utilisant des roulements 7201 BEGAP.
+
+##### Pivot joint
+
+Son rôle et la précision d'application sont essentiels pour le bon fonctionnement du robot. Il nous permet d'obtenir la distance correcte en parallélisme, comme indiqué dans le design ci-dessous. Il est entièrement créé en utilisant la découpe laser (2 couches de 3 mm).
+
+[![Screenshot 2024-03-09 at 8.06.04 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/8vMscreenshot-2024-03-09-at-8-06-04-pm.png)Figure 11: Focalisation sur la piéce "pivot joint"](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/8vMscreenshot-2024-03-09-at-8-06-04-pm.png)
+
+##### Pivot motor
+
+C'est la seule pièce qui est modélisée pour l'impression 3D. Son rôle est le même que celui de la pièce "pivot joint". Elle est directement montée sur le moteur du bas (moteur 2). Pour renforcer la partie de la pièce qui recevra les forces de frottement du stylo, un triangle de renfort a été ajouté, comme vous pouvez le voir ci-dessous.
+
+[![Screenshot 2024-03-09 at 8.12.07 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-12-07-pm.png)Figure 12: Triangle de renfort de "pivot motor"](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-12-07-pm.png)
+
+<p class="callout info">L'axe centrique est un détail et il n'est pas requis pour le fonctionnement correct du mécanisme.</p>
+
+<table border="1" id="bkmrk--13" style="border-collapse: collapse; width: 100%; height: 191.422px;"><colgroup><col style="width: 33.3539%;"></col><col style="width: 33.3539%;"></col><col style="width: 33.3539%;"></col></colgroup><tbody><tr style="height: 191.422px;"><td style="border-style: none; height: 191.422px;">[![Screenshot 2024-03-09 at 8.11.43 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-11-43-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-11-43-pm.png)</td><td style="height: 191.422px; border-style: none;">[![Screenshot 2024-03-09 at 8.12.13 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-12-13-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-12-13-pm.png)</td><td style="height: 191.422px; border-style: none;">[![Screenshot 2024-03-09 at 8.12.22 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-12-22-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-12-22-pm.png)</td></tr></tbody></table>
+
+#####  Axe d'effecteur
+
+Il s'agit de l'axe qui supporte l'outil de l'effecteur. Il est guidé par les axes parallèles et mis en position (MIP) par la pièce "pivot joint". L'outil de l'effecteur est l'élément terminal du robot qui entre en contact direct avec la surface d'écriture. Son rôle principal est de tracer des lignes en utilisant un stylo.
+
+<span style="background-color: rgb(251, 238, 184);"><span style="background-color: rgb(251, 238, 184);">EFFECTOR </span>WAITING TO BE UPLOADED</span>
+
+##### Solidworks
+
+Tous les fichiers et les fichiers d'assemblage sont disponibles sur: [LineaScribe Robot.zip](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/614). Voici l'organisation des fichiers :
+
+- **Architecture :** il s'agit d'un fichier squelette des différentes configurations. Si vous changez les dimensions des pièces présentes dans ce squelette, elles sont mises à jour dans tous les assemblages.
+- **Assemblage bras &gt; liaison axe :** il s'agit de l'assemblage complet du mécanisme qui va se visser sur les actionneurs.
+- **Assemblage &gt; Assemblage1 :** il s'agit de l'assemblage total du robot.
+- **Assemblage effecteur &gt;** <span style="background-color: rgb(251, 238, 184);"><span style="background-color: rgb(251, 238, 184);">EFFECTOR </span>WAITING TO BE UPLOADED</span>
+
+##### Fichiers SVG &amp; STL
+
+1. [batis.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/609) (MDF 6mm)
+2. [pivot joint.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/610) (MDF 3mm)
+3. [bilette1.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/611) - articulation parallèle 1 (MDF 3mm)
+4. [bilette2.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/612) - articulation parallèle 2 (MDF 3mm)
+5. [pivot motor.STL](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/613) (3D Maker PLA 30% infill - no support)
+6. <span style="background-color: rgb(251, 238, 184);">EFFECTOR WAITING TO BE UPLOADED</span>
+
 #### Pistes de programmation
 
-[![FlowChart copy.drawio-1.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/flowchart-copy-drawio-1.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/flowchart-copy-drawio-1.png)
+[![FlowChart copy.drawio-1.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/flowchart-copy-drawio-1.png)Figure 13: Pistes de programmation version 1.0.0](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/flowchart-copy-drawio-1.png)
 
 Document PDF V1.0.0: [FlowChart.pdf](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/580)
 
@@ -461,3 +528,7 @@ Recherche sur les méthodes de géométrie inverse du robot
 ##### 02/03/2024
 
 Finalisation de la partie modèle géométrique directe et inverse
+
+##### 08/03/2024
+
+Impression des pieces du bâtis support et on a lancé l'impression 3D du "pivot motor"
