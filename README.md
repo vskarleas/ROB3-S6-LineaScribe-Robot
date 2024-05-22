@@ -6,11 +6,7 @@
 
 #### Membres
 
-TOBBAL Yannis :	tobbalya@gmail.com
-
-ARIDI Rami :	rami.aridi@etu.sorbonne-universite.fr
-
-SKARLEAS Vasilis :	vasileios.skarleas@etu.sorbonne-universite.fr
+<table border="1" id="bkmrk-nom-pr%C3%A9nom-email-tob" style="border-collapse: collapse; width: 100%;"><colgroup><col style="width: 50%;"></col><col style="width: 50%;"></col></colgroup><tbody><tr><td>**Nom Prénom**</td><td>**Email**</td></tr><tr><td>TOBBAL Yannis</td><td><tobbalya@gmail.com></td></tr><tr><td>ARIDI Rami</td><td><rami.aridi@etu.sorbonne-universite.fr></td></tr><tr><td>SKARLEAS Vasilis</td><td><vasileios.skarleas@etu.sorbonne-universite.fr></td></tr></tbody></table>
 
 #### Cursus
 
@@ -26,7 +22,7 @@ Début: 14/02/24 | Fin: 23/05/24
 
 Le but est de créer un robot capable de dessiner différentes formes sur une feuille de papier. Il doit pouvoir réaliser des formes préprogrammée ainsi qu'être contrôlé manuellement.
 
-Le robot est fixé sur un support carré horizontal comportant une zone de dessin de 10\*10 cm. Il y a 2 exercice qu'il doit réussir. En outre, le robot faut être capable de repondre au cahier des charges disponible <span style="text-decoration: underline;">[ici](https://wiki.fablab.sorbonne-universite.fr/BookStack/books/projets-due-2023-2024/page/le-sujet-du-projet)</span>.
+Le robot est fixé sur un support carré horizontal comportant une zone de dessin de 10\*10 cm. Il y a 2 exercice qu'il doit réussir. En outre, le robot faut être capable de répondre au cahier des charges disponible <span style="text-decoration: underline;">[ici](https://wiki.fablab.sorbonne-universite.fr/BookStack/books/projets-due-2023-2024/page/le-sujet-du-projet)</span>.
 
 **<span style="text-decoration: underline;">Exercice 1  
 </span>***Dessiner des formes prédéfinies*
@@ -71,7 +67,7 @@ Les moyens qu'on a à notre disposition sont les suivantes:
     - Un servomoteur Emax ES08A 180°.
 - Mécanique : 
     - Matière PLA pour impression 3D;
-    - Feuilles medium : 3mm et 6mm d'épaisseur;
+    - Feuilles MDF : 3mm et 6mm d'épaisseur;
     - Vis et écrous : M2, M2.5, M3, M4.
     - Roulements et axes de diamètre 4mm.
 - Informatique 
@@ -80,7 +76,12 @@ Les moyens qu'on a à notre disposition sont les suivantes:
 
 #### Machines utilisées
 
-Utilisation de l'impression 3D pour des pièces sofistqiues et éventuellement de la technologie de découpe laser pour les autres pieces.
+Utilisation de l'impression 3D pour des pièces sophistiquée et éventuellement de la technologie de découpe laser pour les autres pièces.
+
+##### Matière consommée:
+
+MDF: 64 cm<sup>3 </sup>(Bras) + 302 cm<sup>3 </sup>(Tour): 366 cm<sup>3</sup> total   
+PLA: 7.3 cm<sup>3 </sup>(Effecteur) + 9 cm<sup>3 </sup>(Actionneur) : 16.3 cm<sup>3 </sup>total
 
 ### **Diagramme de GANTT**
 
@@ -98,7 +99,7 @@ Ce diagramme de GANTT est donnée à titre indicatif</p>
 
 Durant notre brainstorming: nous eûmes 5 idées que nous avons ultimement rejetées:
 
-[![IMG_6529.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/scaled-1680-/img-6529.png)<span style="color: rgb(35, 111, 161);">*Figure 1: Photo de notre tableau - juste pour demonstration. Explications sont disponibles ci-dessous*</span>](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/img-6529.png)
+[![IMG_6529.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/scaled-1680-/img-6529.png)<span style="color: rgb(35, 111, 161);">*Figure 1: Photo de notre tableau - juste pour démonstration. Explications sont disponibles ci-dessous*</span>](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/img-6529.png)
 
 <span style="color: rgb(34, 34, 34); font-family: var(--font-heading, var(--font-body)); font-size: 1.666em; font-weight: 400;">Idée 1 - Robot de roues</span>
 
@@ -116,13 +117,13 @@ Un robot sur deux roues motorisées. Il peut faire de rotations en faisant tourn
 
 <span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">Avantages:</span></span>
 
-- <span style="color: rgb(0, 0, 0);">Le robot est facile à controller avec un joystick (important pour la réalisation de l'exercise 2)</span>
+- <span style="color: rgb(0, 0, 0);">Le robot est facile à contrôler avec un joystick (important pour la réalisation de l’exercice 2)</span>
 - <span style="color: rgb(0, 0, 0);">Sa construction et modélisation est simple</span>
 
-<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">Inconvenients: </span></span>
+<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">Inconvénients: </span></span>
 
-- On ne peut pas réaliser de trajectoires complexes. Le robot ne peut pas suivre des trajectoires complexes sans l'aide de capteurs odométriques.
-- L'utilisation des servomoteurs empêcherait de faire rouler le robot indéfiniment. Cela ne serait pas un problème avec l'exercice 1. L'exercice 2 pourrait se révéler impossible à faire (Prenons par exemple un cas hyperbolique et fantaisiste: La forme à dessiner au joystick est une réplique de la Joconde. Le robot ne pourrait jamais faire ceci). Pour depaser cet obstacle, il faudrait utiliser de roues avec une diamétre assez grande entraînant des complications aux glissements sur la surface.
+- On ne peut pas réaliser de trajectoires complexes. Le robot ne peut pas suivre des trajectoires complexes sans l'aide de capteurs odométrique.
+- L'utilisation des servomoteurs empêcherait de faire rouler le robot indéfiniment. Cela ne serait pas un problème avec l'exercice 1. L'exercice 2 pourrait se révéler impossible à faire (Prenons par exemple un cas hyperbolique et fantaisiste: La forme à dessiner au joystick est une réplique de la Joconde. Le robot ne pourrait jamais faire ceci). Pour dépasser cet obstacle, il faudrait utiliser de roues avec une diamètre assez grande entraînant des complications aux glissements sur la surface.
 
 #### Idée 2 - Robot XY (cartésien)
 
@@ -144,7 +145,7 @@ Un système similaire au fonctionnement d'une imprimante 3D:
 - Ce système permet un mouvement fluide et précis du stylo.
 - Les calculs pour contrôler le robot sont simplifiés par le fait qu'on ne réfléchit que sur le plan cartésien sans faire ce changements de <span style="color: rgb(0, 0, 0);">bases.</span>
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Inconvenients:</span>
+<span style="text-decoration: underline; color: rgb(0, 0, 0);">Inconvénients:</span>
 
 - Le système de bielle-manivelle peut être plus lourd qu'un système à roues motorisées, ce qui peut affecter la performance du robot.
 - Le système de bielle manivelle pourrait se révéler trop massif pour le robot.
@@ -158,7 +159,7 @@ Inspirés du "Scissors mechanism", on voudrait attacher deux servomoteurs à la 
 
 <span style="text-decoration: underline; color: rgb(0, 0, 0);">Croquis:</span>
 
-[![image (3).png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/image-3.png)*Figure 4: Démonstration du mécanism de sciseaux*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-3.png)
+[![image (3).png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/image-3.png)*Figure 4: Démonstration du mécanisme de ciseaux*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-3.png)
 
 <span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0); text-decoration: underline;">Avantages:</span></span>
 
@@ -166,7 +167,7 @@ Inspirés du "Scissors mechanism", on voudrait attacher deux servomoteurs à la 
 - De plus, ce mécanisme est particulièrement adapté à la création de cercles. La rotation des bras permet de dessiner des cercles de différentes tailles avec précision.
 - En outre, le mécanisme "Scissors" permet de dessiner des lignes droites très précises dans le sens du mouvement du stylo.
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Inconvenients:</span>
+<span style="text-decoration: underline; color: rgb(0, 0, 0);">Inconvénients:</span>
 
 - Malheureusement, cette solution présente également un inconvénient. Les mouvements étant plutôt révolutionnaires, créer des lignes droites verticales du stylo semble limité et dans certains cas extrêmes impossible.
 
@@ -174,13 +175,13 @@ Inspirés du "Scissors mechanism", on voudrait attacher deux servomoteurs à la 
 
 <span style="text-decoration: underline; color: rgb(0, 0, 0);">Principe:</span>
 
-Le robot sera doté d'un mécanisme de ciseaux alimenté par deux servo-moteurs positionnés aux coins de la base d'écriture. Chacun entraînera la rotation d'une poutre, permettant des mouvements de glissement dans les deux directions du vecteur r de rotation,. Le point d'intersection des deux poutres (créant ainsi une liaison glissière complexe) serait équipé du stylo, assurant une couverture totale de la feuille grâce à cette configuration ingénieuse.
+Le robot sera doté d'un mécanisme de ciseaux alimenté par deux servomoteurs positionnés aux coins de la base d'écriture. Chacun entraînera la rotation d'une poutre, permettant des mouvements de glissement dans les deux directions du vecteur r de rotation,. Le point d'intersection des deux poutres (créant ainsi une liaison glissière complexe) serait équipé du stylo, assurant une couverture totale de la feuille grâce à cette configuration ingénieuse.
 
 <span style="text-decoration: underline; color: rgb(0, 0, 0);">Croquis:</span>
 
 [![File_000.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/scaled-1680-/file-000.png)*Figure 5: Une conception de l'idée de point d'intersection*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/file-000.png)
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Inconvenients:</span>
+<span style="text-decoration: underline; color: rgb(0, 0, 0);">Inconvénients:</span>
 
 - L'effort tangent au mouvement du stylo généré par une poutre sur l'autre serait extrêmement important, dépassant probablement les limites de faisabilité. La nécessité d'un glissement ultra-lisse, sans aucun frottement, et d'une précision extrême dans les mouvements représente un défi technique considérable.
 
@@ -188,26 +189,26 @@ Le robot sera doté d'un mécanisme de ciseaux alimenté par deux servo-moteurs 
 
 <span style="text-decoration: underline; color: rgb(0, 0, 0);">Principe:</span>
 
-On a pensé de faire un robot qui a deux axes de rotation verticales et une axe de rotation horizontale. En fait, il y aura deux rotations autour de deuz axes Z (Z1 et Z2) verticales et une troisieme rotation autour de Z3 qui est perpandiculier au axe (Z2).
+On a pensé de faire un robot qui a deux axes de rotation verticales et une axe de rotation horizontale. En fait, il y aura deux rotations autour de deux axes Z (Z1 et Z2) verticales et une troisième rotation autour de Z3 qui est perpendiculaire au axe (Z2).
 
 <span style="text-decoration: underline;">Croquis:</span>
 
-[![image (2).png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/image-2.png)*Figure 6: croquis du robot avec 2 degrées de liberté*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-2.png)
+[![image (2).png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/image-2.png)*Figure 6: croquis du robot avec 2 dégrées de liberté*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-2.png)
 
 <span style="text-decoration: underline;">Avantages:</span>
 
 - C'est un modèle connu du groupe, la partie mathématique est donc plus simple à réaliser
-- Il y a beaucoup de manières de retirer de la matière avec une modélisation inteligente.
+- Il y a beaucoup de manières de retirer de la matière avec une modélisation intelligente.
 
-<span style="text-decoration: underline;">Inconvenients:</span>
+<span style="text-decoration: underline;">Inconvénients:</span>
 
-- Poids excessive sur l'endroit du moteur 2, quelque chose qui pourrait impacter la precision de designs. Idéalement, on voudrait trouver une solution qui permettra de deplacer ce moteur sur le corps de la base principale du robot (oú se trouve le moteur 1) en utilisant les outils qu'on a à notre disposition.
+- Poids excessive sur l'endroit du moteur 2, quelque chose qui pourrait impacter la précision de designs. Idéalement, on voudrait trouver une solution qui permettra de déplacer ce moteur sur le corps de la base principale du robot (où se trouve le moteur 1) en utilisant les outils qu'on a à notre disposition.
 
 #### Idée 6 - Robot parallélépipède
 
 <span style="text-decoration: underline;">Principe:</span>
 
-Inspiré par le mécanishm du robot type SCARA, on avait une reflexion: "Pourquoi on ne deplace pas le moteur de la 2éme rotation (moteur2), sur le même axe de rotation qui cellui du moteur 1. Le résultat du mouvement sera la même tout en ayant deplacé la majorité du poids sur le corps principale du robot.
+Inspiré par le mécanisme du robot type SCARA, on avait une réflexion: "Pourquoi on ne déplace pas le moteur de la 2éme rotation (moteur2), sur le même axe de rotation qui celui du moteur 1. Le résultat du mouvement sera la même tout en ayant déplacé la majorité du poids sur le corps principale du robot.
 
 <span style="text-decoration: underline;">Croquis:</span>
 
@@ -217,10 +218,10 @@ Inspiré par le mécanishm du robot type SCARA, on avait une reflexion: "Pourquo
 
 - Moins de poids sur les articulations mobiles du robot =&gt; meilleur précision par rapport l'idée d'avant.
 
-<span style="text-decoration: underline;">Inconvenients:</span>
+<span style="text-decoration: underline;">Inconvénients:</span>
 
 - Selon la manière d'expression du modèle géométrique direct, le calcul du modèle géométrique inverse pourrait être compliqué.
-- La modélisation des quelques piéces unique pour la réalisation de ce type du robot pourrait augmenter le temps de fabrication et l'utilisation de matiére.
+- La modélisation des quelques pièces unique pour la réalisation de ce type du robot pourrait augmenter le temps de fabrication et l'utilisation de matière.
 
 #### Solution retenue
 
@@ -245,13 +246,15 @@ Ayant effectué une évaluation approfondie des différentes alternatives, notre
         - Cela impliquerait un ajout de matière, et donc de masse
         - Cela n'empêcherait pas un utilisateur au joystick de bloquer le robot
 5. Robot type SCARA 
-    - Il s'agit de notre idée de depart de base, mais à la découverte de l'idée numero 6 qui nous permetra de deplacer les deux moteur sur le corp de la base du robot, on a decidé de developer le robot type parallélépipède.
+    - Il s'agit de notre idée de départ de base, mais à la découverte de l'idée numéro 6 qui nous permettra de déplacer les deux moteur sur le corps de la base du robot, on a décidé de développer le robot type parallélépipède.
 
 ### **Étape 2: Conception détaillée**
 
 #### Modèle géométrique
 
-<p class="callout info">**Nota bene** On avait déjà commencé l'analyse du modéle cinematique du robot de l'idée numero 5 (type SCARA). Ci-dessous vous allez trouver l'option également de visualiser et voir le calcul qui était effectué pour ce robot, ainsi que pour le robot type parallélépipède (idée numero 6).</p>
+<p class="callout info">**Nota bene** On avait déjà commencé l'analyse du modèle cinématique du robot de l'idée numéro 5 (type SCARA). Ci-dessous vous allez trouver l'option également de visualiser et voir le calcul qui était effectué pour ce robot, ainsi que pour le robot type parallélépipède (idée numéro 6).  
+Les équations trouvées dans le modèle parallélépipède étant impossible à résoudre, on se base d'abord sur celles du SCARA tout en adaptant ces-dernières aux spécificités de notre modèle  
+</p>
 
 <details id="bkmrk-robot-type-scara-cin"><summary>Robot type SCARA</summary>
 
@@ -265,7 +268,7 @@ Ayant effectué une évaluation approfondie des différentes alternatives, notre
 
 #### Modèle géométrique directe (complet)
 
-Calculant T<sub>0-&gt;1</sub>, T<sub>1-&gt;2</sub>, T<sub>2-&gt;effector</sub>, ansi que T<sub>0-&gt;effector</sub>.
+Calculant T<sub>0-&gt;1</sub>, T<sub>1-&gt;2</sub>, T<sub>2-&gt;effector</sub>, ainsi que T<sub>0-&gt;effector</sub>.
 
 [![equations-scara-1.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/iNGequations-scara-1.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/equations-scara-1.png)
 
@@ -281,7 +284,7 @@ On peut aussi se concentrer uniquement sur les deux premières rotations car ce 
 
 [![SCARA Simplified Robot-2.jpg](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/scara-simplified-robot-2.jpg)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scara-simplified-robot-2.jpg)
 
-Les résultas sont disponibles en PDF sur: [SCARA Simplified Robot.pdf](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/578)
+Les résultats sont disponibles en PDF sur: [SCARA Simplified Robot.pdf](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/578)
 
 #### Modèle géométrique inverse
 
@@ -295,29 +298,35 @@ Ainsi selon le modèle géométrique directe et le la trigonométrie du systéme
 
 #### Modèle géométrique directe
 
-Ci-dessous vous pouvez trouver l'approche mathématique du robot type parallélépipède pour sa modèle géométrique directe.
+Ci-dessous, vous trouverez l'approche mathématique du robot type parallélépipède pour sa modèle géométrique directe.
 
 [![Parallelipede-1.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/parallelipede-1.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/parallelipede-1.png)
 
 [![Parallelipede-2.jpg](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/parallelipede-2.jpg)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/parallelipede-2.png)
 
-Les résultas sont disponibles en PDF sur: [Paralléléplipède Robot.pdf](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/572)
+Les résultats sont disponibles en PDF sur: [Parallélépipède Robot.pdf](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/572)
+
+</details><details id="bkmrk-sp%C3%A9cifications-de-no"><summary>Spécifications de notre modéle</summary>
+
+Avant trouver l'angle θ2 final, il faut procéder au choix de notre sens du plan, qui dépend de la configuration du robot et de l'angle θ1. Le calcul suivant nous permet d'obtenir la formule final de l'angle θ2:
+
+[![Image-1.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-04/scaled-1680-/image-1.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-04/image-1.png)
 
 </details>
 #### Schéma électronique
 
-Sur notre schéma électronique il y a un bouton qui permet de changer entre mode manuelle et mode automatique. De plus, il y a deux LEDs qui indique sur quel mode on est un moment donnée. Par exemple si on est en mode manuelle, le LED bleu est allumé, sinon le LED vert est allumé. Em outre, vous pouvez aussi trouver la connection du joystick analogique qu'on a besoin pour la réalisation de l'exercice 2. Il faut noter que le joystick a un fonctionnement de bouton intégré. On peut utiliser cette fonctionnalité pour controller plean different chooses par exemple:
+Sur notre schéma électronique il y a un bouton qui permet de changer entre mode manuelle et mode automatique. De plus, il y a deux LED qui indiquent sur quel mode on est un moment donné. Par exemple si on est en mode manuelle, la LED bleue est allumée, sinon la LED verte est allumée. En outre, vous pouvez aussi trouver la connexion du joystick analogique dont on a besoin pour la réalisation de l'exercice 2. Il faut noter que le joystick à un fonctionnement de bouton intégré. On peut utiliser cette fonctionnalité pour contrôler plein de différentes choses, par exemple:
 
 - Le stylo écrit ou pas.
-- On fait un dessin avec le joystick qu'on visualise sur l'écran de l'ordinateur et on tap le bouton pour confirmer le dessin afin qu'il est créé par le robot.
+- On fait un dessin avec le joystick qu'on visualise sur l'écran de l'ordinateur et on tape le bouton pour confirmer le dessin afin qu'il est créé par le robot.
 
-[![image (4).png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/image-4.png)Figure 8: Schéma électronique V1.0.0](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-4.png)
+[![LineaScript.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/lineascript.png)Figure 8: Schéma électronique V1.5.0](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-4.png)
 
 #### Modélisation
 
 Notre objectif principal était de modéliser le robot selon un design à la fois compact et rigide. Un autre aspect important était de minimiser la quantité de matière utilisée et de réduire au maximum le temps de fabrication. Un modèle assemblé sur SolidWorks est disponible ci-dessous.
 
-[![displayRobot.gif](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/displayrobot.gif)Figure 9: Demonstration du mécanisme du robot LineaScribe](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/displayrobot.gif)
+[![displayRobot.gif](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/displayrobot.gif)Figure 9: Démonstration du mécanisme du robot LineaScribe](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/displayrobot.gif)
 
 
 ##### Sous-assemblages
@@ -327,24 +336,27 @@ Notre objectif principal était de modéliser le robot selon un design à la foi
 3. Pivot joint
 4. Pivot motor
 5. Axe d'effecteur
+6. Effecteur
 
 ##### Bâti support
 
-C'est le corps principal du robot. Son objectif principal est de maintenir les deux moteurs sur le même axe de rotation. Il doit être capable de supporter les forces exercées par les moteurs vers les articulations parallèles ainsi que le retour d'information de ces forces.
+C'est le corps principal du robot. Son objectif principal est de maintenir les deux moteurs sur le même axe de rotation. Il doit être capable de supporter les forces exercées par les moteurs vers les articulations parallèles ainsi que le retour des forces de frottement.
 
 [![Screenshot 2024-03-09 at 8.15.57 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-15-57-pm.png)Figure 10: Bâti support du robot avec les moteur assemblés](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-15-57-pm.png)
 
 Le bâti est entièrement créé en utilisant la découpe laser. Concernant la conception de la pièce, il faut noter que le plan du moteur du haut (moteur 1) est conceptualisé de manière à ne pas permettre le détachement des pièces tout en acceptant un stress excessif par les articulations principales du robot.
 
-##### Articulations parallèles
+##### Articulations parallèles (billettes)
 
-Elles sont également entièrement conceptualisées pour la découpe laser (3 couches différentes de 3 mm). Elles sont montées sur les pièces "pivot joint" et "pivot motor" en utilisant des roulements 7201 BEGAP.
+Elles sont également entièrement conceptualisées pour la découpe laser (3 couches différentes de 3 mm). Elles sont montées sur les pièces "pivot joint" et "pivot motor" en utilisant des roulements 7201 BEGAP. Elles sont:
+
+<table border="1" id="bkmrk-billette-principale-" style="border-collapse: collapse; width: 100%; height: 59.5938px;"><colgroup><col style="width: 50%;"></col><col style="width: 50%;"></col></colgroup><tbody><tr style="height: 29.7969px;"><td style="height: 29.7969px;">**Billette Principale**</td><td style="height: 29.7969px;">**Billette Secondaire**</td></tr><tr style="height: 29.7969px;"><td style="height: 29.7969px;">[![Screenshot 2024-03-10 at 7.41.27 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-10-at-7-41-27-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-10-at-7-41-27-pm.png)</td><td style="height: 29.7969px;">[![Screenshot 2024-03-10 at 7.42.18 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-10-at-7-42-18-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-10-at-7-42-18-pm.png)</td></tr></tbody></table>
 
 ##### Pivot joint
 
 Son rôle et la précision d'application sont essentiels pour le bon fonctionnement du robot. Il nous permet d'obtenir la distance correcte en parallélisme, comme indiqué dans le design ci-dessous. Il est entièrement créé en utilisant la découpe laser (2 couches de 3 mm).
 
-[![Screenshot 2024-03-09 at 8.06.04 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/8vMscreenshot-2024-03-09-at-8-06-04-pm.png)Figure 11: Focalisation sur la piéce "pivot joint"](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/8vMscreenshot-2024-03-09-at-8-06-04-pm.png)
+[![Screenshot 2024-03-09 at 8.06.04 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/8vMscreenshot-2024-03-09-at-8-06-04-pm.png)Figure 11: Focalisation sur la pièce "pivot joint"](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/8vMscreenshot-2024-03-09-at-8-06-04-pm.png)
 
 ##### Pivot motor
 
@@ -356,33 +368,65 @@ C'est la seule pièce qui est modélisée pour l'impression 3D. Son rôle est le
 
 <table border="1" id="bkmrk--13" style="border-collapse: collapse; width: 100%; height: 191.422px;"><colgroup><col style="width: 33.3539%;"></col><col style="width: 33.3539%;"></col><col style="width: 33.3539%;"></col></colgroup><tbody><tr style="height: 191.422px;"><td style="border-style: none; height: 191.422px;">[![Screenshot 2024-03-09 at 8.11.43 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-11-43-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-11-43-pm.png)</td><td style="height: 191.422px; border-style: none;">[![Screenshot 2024-03-09 at 8.12.13 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-12-13-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-12-13-pm.png)</td><td style="height: 191.422px; border-style: none;">[![Screenshot 2024-03-09 at 8.12.22 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-12-22-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-12-22-pm.png)</td></tr></tbody></table>
 
-#####  Axe d'effecteur
+#####  Axe d'effecteur (billette Emax)
 
-Il s'agit de l'axe qui supporte l'outil de l'effecteur. Il est guidé par les axes parallèles et mis en position (MIP) par la pièce "pivot joint". L'outil de l'effecteur est l'élément terminal du robot qui entre en contact direct avec la surface d'écriture. Son rôle principal est de tracer des lignes en utilisant un stylo.
+Il s'agit de l'axe qui supporte l'outil de l'effecteur. Il est guidé par les axes parallèles et mis en position (MIP) par la pièce "pivot joint". Le moteur est mis en position grâce à "Pignon Servo Emax". C'est la plateforme sur laquelle on fixe le moteur Emax comme on peut observer ci-dessous :
 
-<span style="background-color: rgb(251, 238, 184);"><span style="background-color: rgb(251, 238, 184);">EFFECTOR </span>WAITING TO BE UPLOADED</span>
+  
+  
+[![Screenshot 2024-03-10 at 7.50.44 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-10-at-7-50-44-pm.png)Figure 13: Billette Emax en assemblage avec le moteur 3 (Emax)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-10-at-7-50-44-pm.png)
+
+[![Screenshot 2024-03-10 at 8.59.03 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-10-at-8-59-03-pm.png)Figure 14: Modèle d'un pignon servo Emax](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-10-at-8-59-03-pm.png)
+
+##### Effecteur
+
+L'outil de l'effecteur est l'élément terminal du robot qui entre en contact direct avec la surface d'écriture. Son rôle principal est de tracer des lignes en utilisant un stylo. Voici la deuxième pièce en impression 3D :
+
+[![Screenshot 2024-03-10 at 9.00.51 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-10-at-9-00-51-pm.png)Figure 15: La pièce qui va soutenir l'outil (le stylo dans notre cas)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-10-at-9-00-51-pm.png)
 
 ##### Solidworks
 
-Tous les fichiers et les fichiers d'assemblage sont disponibles sur: [LineaScribe Robot.zip](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/614). Voici l'organisation des fichiers :
+Tous les fichiers et les fichiers d'assemblage sont disponibles sur: [LineaScribe Robot.zip](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/620). Voici l'organisation des fichiers :
 
 - **Architecture :** il s'agit d'un fichier squelette des différentes configurations. Si vous changez les dimensions des pièces présentes dans ce squelette, elles sont mises à jour dans tous les assemblages.
-- **Assemblage bras &gt; liaison axe :** il s'agit de l'assemblage complet du mécanisme qui va se visser sur les actionneurs.
+- **Assemblage bras &gt; Pièce Liaison Billette Principale - Billette Emax :** C'est notre "pivot joint"
+- **Assemblage bras &gt; ActionneurServo :** C'est notre "motor joint"
+- **Assemblage bras &gt; Billette \* :** ils sont les différents billettes du robot
+- **Assemblage bras &gt; Pignon servo max :** c'est pour la mise en position du moteur Emax commet on peut voir à la figure
+- **Assemblage bras &gt; Liaison axe :** il s'agit de l'assemblage complet du mécanisme qui va se visser sur les actionneurs.
 - **Assemblage &gt; Assemblage1 :** il s'agit de l'assemblage total du robot.
-- **Assemblage effecteur &gt;** <span style="background-color: rgb(251, 238, 184);"><span style="background-color: rgb(251, 238, 184);">EFFECTOR </span>WAITING TO BE UPLOADED</span>
+- **Assemblage bras &gt;** **Effecteur :** C'est notre "effecteur"
 
 ##### Fichiers SVG &amp; STL
 
 1. [batis.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/609) (MDF 6mm)
 2. [pivot joint.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/610) (MDF 3mm)
-3. [bilette1.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/611) - articulation parallèle 1 (MDF 3mm)
-4. [bilette2.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/612) - articulation parallèle 2 (MDF 3mm)
+3. [bilette1.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/611) - articulation parallèle 1 - billette principale (MDF 3mm)
+4. [bilette2.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/612) - articulation parallèle 2 - billette secondaire (MDF 3mm)
 5. [pivot motor.STL](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/613) (3D Maker PLA 30% infill - no support)
-6. <span style="background-color: rgb(251, 238, 184);">EFFECTOR WAITING TO BE UPLOADED</span>
+6. [bilette3 et pignon EMAX.svg](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/638) (MDF 3mm)
+7. [Effecteur.STL](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/662) (PLA 1.75mm)
+
+#### Modèle géométrique inverse: vérification
+
+D'après le calcul des robots de type parallélépipède et SCARA, nous avons développé un script sur MATLAB permettant de vérifier le calcul des coordonnées du plan cartésien x, y en fonction des angles θ1 et θ2.
+
+Notre analyse a permis de conclure que :
+
+- Dans le cadre de la limitation de l'espace d'écriture de la plateforme, il existe parfois plusieurs solutions possibles pour atteindre une position spécifique. Il ne s'agit pas de singularités, mais plutôt de libertés de rotation autour des axes des moteurs. Cependant, le robot ne peut pas se placer à certains endroits en raison de la modélisation (support du moteur 1).
+- Il est donc nécessaire de trouver une procédure permettant de choisir la solution du système qui est acceptable.
+
+Voici le fichier MATLAB: [MGI\_matlab.m](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/615)
+
+Pour utiliser le fichier il suffit d'appeler la fonction MGI\_matlab, et passer comme arguments les coordonnées x, y et L1 et L2 les longueurs des articulations du robot. On a ci-dessous le résultat lorsqu'on exécute la fonction pour obtenir les 4 sommets d'un carré (5cm) et qu'on entre les angles renvoyés dans notre esquisse du bras.
+
+[![Demo.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/demo.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/demo.png)
 
 #### Pistes de programmation
 
-[![FlowChart copy.drawio-1.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/flowchart-copy-drawio-1.png)Figure 13: Pistes de programmation version 1.0.0](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/flowchart-copy-drawio-1.png)
+##### Organigramme:
+
+[![FlowChart copy.drawio-1.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/flowchart-copy-drawio-1.png)Figure 16: Pistes de programmation version 1.0.0](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/flowchart-copy-drawio-1.png)
 
 Document PDF V1.0.0: [FlowChart.pdf](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/580)
 
@@ -511,19 +555,19 @@ void blinkLED(int ledPin) {
 
 ##### 14/02/2024
 
-Discussion autour du Projet Robotique ROB3 - différents idées, décission, planning.
+Discussion autour du Projet Robotique ROB3 - différents idées, décision, planning.
 
 ##### 16/02/2024
 
-Provided a first kinematics schema and version 1 of DH table
+Création du schéma cinématique, de la table DH. Etablissement d'un premier modèle géométrique
 
 ##### 19/02/2024
 
-Wiki: preliminary dossier was updated + DH: more detailed conception and corrected the table
+Finalisation du dossier de conception préliminaire. Mise a jour du modèle géométrique et de la table DH, création du modèle géométrique inverse
 
 ##### 22/02/2024
 
-Debut de modélisation des pieces du robot
+Début de modélisation des pièces du robot
 
 ##### 24/02/2024
 
@@ -535,4 +579,20 @@ Finalisation de la partie modèle géométrique directe et inverse
 
 ##### 08/03/2024
 
-Impression des pieces du bâtis support et on a lancé l'impression 3D du "pivot motor"
+Impression des pièces du bâti support et on a lancé l'impression 3D du "pivot motor"
+
+##### 24/04/2024
+
+Programmation des fonctions lignes et carré (pour tests) et connexion au joystick.
+
+##### 25/04/2024
+
+Début de la fonction joystick. Assemblage et câblage définitif du robot. Programmation du cercle pour l'exercice 1
+
+##### 22/05/2024
+
+Finalisation du joystick. Programmation de la fonction pointillés
+
+##### 23/05/2024
+
+Tests finaux et présentation.
