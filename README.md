@@ -6,7 +6,11 @@
 
 #### Membres
 
-<table border="1" id="bkmrk-nom-pr%C3%A9nom-email-tob" style="border-collapse: collapse; width: 100%;"><colgroup><col style="width: 50%;"></col><col style="width: 50%;"></col></colgroup><tbody><tr><td>**Nom Prénom**</td><td>**Email**</td></tr><tr><td>TOBBAL Yannis</td><td><tobbalya@gmail.com></td></tr><tr><td>ARIDI Rami</td><td><rami.aridi@etu.sorbonne-universite.fr></td></tr><tr><td>SKARLEAS Vasilis</td><td><vasileios.skarleas@etu.sorbonne-universite.fr></td></tr></tbody></table>
+| Nom Prénom                 | Email                                                                              |
+| --------------------------- | ---------------------------------------------------------------------------------- |
+| TOBBAL Yannis               | [tobbalya@gmail.com](mailto:tobbalya@gmail.com)                                       |
+| ARIDI Rami                  | [rami.aridi@etu.sorbonne-universite.fr](mailto:rami.aridi@etu.sorbonne-universite.fr) |
+| SKARLEAS Vasileios Filippos | [vasileios.skarleas@etu.sorbonne-universite.fr]()                                     |
 
 #### Cursus
 
@@ -22,20 +26,19 @@ Début: 14/02/24 | Fin: 23/05/24
 
 Le but est de créer un robot capable de dessiner différentes formes sur une feuille de papier. Il doit pouvoir réaliser des formes préprogrammée ainsi qu'être contrôlé manuellement.
 
-Le robot est fixé sur un support carré horizontal comportant une zone de dessin de 10\*10 cm. Il y a 2 exercice qu'il doit réussir. En outre, le robot faut être capable de répondre au cahier des charges disponible <span style="text-decoration: underline;">[ici](https://wiki.fablab.sorbonne-universite.fr/BookStack/books/projets-due-2023-2024/page/le-sujet-du-projet)</span>.
+Le robot est fixé sur un support carré horizontal comportant une zone de dessin de 10\*10 cm. Il y a 2 exercice qu'il doit réussir. En outre, le robot faut être capable de répondre au cahier des charges disponible `<span style="text-decoration: underline;">`[ici](https://wiki.fablab.sorbonne-universite.fr/BookStack/books/projets-due-2023-2024/page/le-sujet-du-projet).
 
-**<span style="text-decoration: underline;">Exercice 1  
-</span>***Dessiner des formes prédéfinies*
+**`<span style="text-decoration: underline;">`Exercice 1
+***Dessiner des formes prédéfinies*
 
 Le robot doit être capable de réaliser en 10 +- 0.2 secondes:
 
--Une ligne droite de 5cm  
--Une ligne droite de 5cm en pointillés  
--Un cercle de 2.5cm de rayon  
+-Une ligne droite de 5cm
+-Une ligne droite de 5cm en pointillés
+-Un cercle de 2.5cm de rayon
 -Un cercle de 2.5cm de rayon en pointillés
 
-<span style="text-decoration: underline;">**Exercice 2** </span>*Permettre à un utilisateur de dessiner*<span style="text-decoration: underline;">  
-</span>
+`<span style="text-decoration: underline;">`**Exercice 2** *Permettre à un utilisateur de dessiner*`<span style="text-decoration: underline;">`
 
 L'utilisateur doit être capable d'utiliser le robot pour dessiner la forme qu'il veut sur la zone de dessin. Le robot est contrôlé par un joystick qui doit donc être doté des fonctions utilisés dans l'exercice 1 (Déplacement, relever le stylo etc...)
 
@@ -44,35 +47,34 @@ L'utilisateur doit être capable d'utiliser le robot pour dessiner la forme qu'i
 Il faut donc créer un robot qui:
 
 - Maintienne un effecteur (le stylo) afin de dessiner
-- Se déplace: 
-    - Dans un plan horizontal: Créer les formes
-    - Verticalement: Dessiner ou non, pour les pointillés
+- Se déplace:
+  - Dans un plan horizontal: Créer les formes
+  - Verticalement: Dessiner ou non, pour les pointillés
 - Enregistre des formes prédéfinies
 - Soit capable d'être contrôlé précisément par le joystick
 
-#### Matériel  
-
+#### Matériel
 
 Les moyens qu'on a à notre disposition sont les suivantes:
 
 - Un crayon
-- Interface de commande : 
-    - Une carte arduino UNO avec câble USB-B;
-    - Un joystick:
-    - Une platine de protoypage;
-    - Alimentation régulée 5V ;
-    - Câbles, LEDs, boutons poussoirs, résistances.
-- Motorisation : 
-    - Deux servomoteurs HS422 180°;
-    - Un servomoteur Emax ES08A 180°.
-- Mécanique : 
-    - Matière PLA pour impression 3D;
-    - Feuilles MDF : 3mm et 6mm d'épaisseur;
-    - Vis et écrous : M2, M2.5, M3, M4.
-    - Roulements et axes de diamètre 4mm.
-- Informatique 
-    - Ressources CAO.zip contient les fichiers Solidworks pour les deux modèles de servomoteurs
-    - datasheets.zip contient les documentations de quelques-uns des composants fourni
+- Interface de commande :
+  - Une carte arduino UNO avec câble USB-B;
+  - Un joystick:
+  - Une platine de protoypage;
+  - Alimentation régulée 5V ;
+  - Câbles, LEDs, boutons poussoirs, résistances.
+- Motorisation :
+  - Deux servomoteurs HS422 180°;
+  - Un servomoteur Emax ES08A 180°.
+- Mécanique :
+  - Matière PLA pour impression 3D;
+  - Feuilles MDF : 3mm et 6mm d'épaisseur;
+  - Vis et écrous : M2, M2.5, M3, M4.
+  - Roulements et axes de diamètre 4mm.
+- Informatique
+  - Ressources CAO.zip contient les fichiers Solidworks pour les deux modèles de servomoteurs
+  - datasheets.zip contient les documentations de quelques-uns des composants fourni
 
 #### Machines utilisées
 
@@ -80,8 +82,8 @@ Utilisation de l'impression 3D pour des pièces sophistiquée et éventuellement
 
 ##### Matière consommée:
 
-MDF: 64 cm<sup>3 </sup>(Bras) + 302 cm<sup>3 </sup>(Tour): 366 cm<sup>3</sup> total   
-PLA: 7.3 cm<sup>3 </sup>(Effecteur) + 9 cm<sup>3 </sup>(Actionneur) : 16.3 cm<sup>3 </sup>total
+MDF: 64 cm`<sup>`3 `</sup>`(Bras) + 302 cm`<sup>`3 `</sup>`(Tour): 366 cm`<sup>`3`</sup>` total
+PLA: 7.3 cm`<sup>`3 `</sup>`(Effecteur) + 9 cm`<sup>`3 `</sup>`(Actionneur) : 16.3 cm`<sup>`3 `</sup>`total
 
 ### **Diagramme de GANTT**
 
@@ -94,16 +96,15 @@ Ce diagramme de GANTT est donnée à titre indicatif</p>
 
 [Project FabLab ROB3 Tasks (GANTT).pdf](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/549)
 
-### **Étape 1: Brainstorming, idées de réalisation et analyse des risques**  
-
+### **Étape 1: Brainstorming, idées de réalisation et analyse des risques**
 
 Durant notre brainstorming: nous eûmes 5 idées que nous avons ultimement rejetées:
 
-[![IMG_6529.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/scaled-1680-/img-6529.png)<span style="color: rgb(35, 111, 161);">*Figure 1: Photo de notre tableau - juste pour démonstration. Explications sont disponibles ci-dessous*</span>](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/img-6529.png)
+[![IMG_6529.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/scaled-1680-/img-6529.png)`<span style="color: rgb(35, 111, 161);">`*Figure 1: Photo de notre tableau - juste pour démonstration. Explications sont disponibles ci-dessous*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/img-6529.png)
 
-<span style="color: rgb(34, 34, 34); font-family: var(--font-heading, var(--font-body)); font-size: 1.666em; font-weight: 400;">Idée 1 - Robot de roues</span>
+`<span style="color: rgb(34, 34, 34); font-family: var(--font-heading, var(--font-body)); font-size: 1.666em; font-weight: 400;">`Idée 1 - Robot de roues
 
-<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">Principe:</span></span>
+`<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">`Principe:
 
 Un robot sur deux roues motorisées. Il peut faire de rotations en faisant tourner ses roues dans des directions opposées
 
@@ -111,23 +112,23 @@ Un robot sur deux roues motorisées. Il peut faire de rotations en faisant tourn
 - Les roues seraient contrôlées grâce aux 2 servomoteurs HS422 d'une façon similaire au robot E-PUC. Les servomoteurs sont connectés à la plateforme et aux roues via des biellettes ou des engrenages.
 - Un servomoteur ES08A est utilisé pour contrôler le mécanisme de levée et de descente du stylo. Ce servomoteur est plus petit que les HS422 et peut être monté sur la plateforme à proximité du stylo.
 
-<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">Croquis:</span></span>
+`<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">`Croquis:
 
-[*![image.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/s2rimage.png)*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-02-at-2-31-25-pm.png)[<span style="color: rgb(126, 140, 141);"><span style="color: rgb(35, 111, 161);">*Figure 2: Croquis du robot de* roues (type voiture avec une bille pour la stabilisation)</span></span>](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-02-at-2-31-25-pm.png)
+[](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-02-at-2-31-25-pm.png)[`<span style="color: rgb(126, 140, 141);"><span style="color: rgb(35, 111, 161);">`*Figure 2: Croquis du robot de* roues (type voiture avec une bille pour la stabilisation)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-02-at-2-31-25-pm.png)
 
-<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">Avantages:</span></span>
+`<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">`Avantages:
 
-- <span style="color: rgb(0, 0, 0);">Le robot est facile à contrôler avec un joystick (important pour la réalisation de l’exercice 2)</span>
-- <span style="color: rgb(0, 0, 0);">Sa construction et modélisation est simple</span>
+- `<span style="color: rgb(0, 0, 0);">`Le robot est facile à contrôler avec un joystick (important pour la réalisation de l’exercice 2)
+- `<span style="color: rgb(0, 0, 0);">`Sa construction et modélisation est simple
 
-<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">Inconvénients: </span></span>
+`<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">`Inconvénients: 
 
 - On ne peut pas réaliser de trajectoires complexes. Le robot ne peut pas suivre des trajectoires complexes sans l'aide de capteurs odométrique.
 - L'utilisation des servomoteurs empêcherait de faire rouler le robot indéfiniment. Cela ne serait pas un problème avec l'exercice 1. L'exercice 2 pourrait se révéler impossible à faire (Prenons par exemple un cas hyperbolique et fantaisiste: La forme à dessiner au joystick est une réplique de la Joconde. Le robot ne pourrait jamais faire ceci). Pour dépasser cet obstacle, il faudrait utiliser de roues avec une diamètre assez grande entraînant des complications aux glissements sur la surface.
 
 #### Idée 2 - Robot XY (cartésien)
 
-<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">Principe:</span></span>
+`<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">`Principe:
 
 Un système similaire au fonctionnement d'une imprimante 3D:
 
@@ -135,17 +136,17 @@ Un système similaire au fonctionnement d'une imprimante 3D:
 - La bielle tenant le stylo est elle même tenue par une bielle. Cette dernière se positionne sur la coordonnée de son axe, tandis que la bielle de l'effecteur choisit alors la deuxième coordonnée du point.
 - Le servomoteur ES08A commande la levée et descente du stylo
 
-<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">Croquis:</span></span>
+`<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">`Croquis:
 
 [![image (1).png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-1.png)*Figure 3: Le croquis d'un robot cartésien*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-1.png)
 
-<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">Avantages:</span></span>
+`<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0);">`Avantages:
 
 - Cette solution ne présente pas de singularités dans sa configuration. De plus, les calculs sont simplifiés par le fait qu'on ne réfléchisse que sur le plan cartésien. Ce qui signifie qu'il peut atteindre toutes les positions du plan cartésien.
 - Ce système permet un mouvement fluide et précis du stylo.
-- Les calculs pour contrôler le robot sont simplifiés par le fait qu'on ne réfléchit que sur le plan cartésien sans faire ce changements de <span style="color: rgb(0, 0, 0);">bases.</span>
+- Les calculs pour contrôler le robot sont simplifiés par le fait qu'on ne réfléchit que sur le plan cartésien sans faire ce changements de `<span style="color: rgb(0, 0, 0);">`bases.
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Inconvénients:</span>
+`<span style="text-decoration: underline; color: rgb(0, 0, 0);">`Inconvénients:
 
 - Le système de bielle-manivelle peut être plus lourd qu'un système à roues motorisées, ce qui peut affecter la performance du robot.
 - Le système de bielle manivelle pourrait se révéler trop massif pour le robot.
@@ -153,72 +154,72 @@ Un système similaire au fonctionnement d'une imprimante 3D:
 
 #### Idée 3 - Scissors mecanism
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Principe:</span>
+`<span style="text-decoration: underline; color: rgb(0, 0, 0);">`Principe:
 
 Inspirés du "Scissors mechanism", on voudrait attacher deux servomoteurs à la base du mécanisme et un système de commande d'actionneur au point "STYLO". Cette solution présente des avantages telles que :
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Croquis:</span>
+`<span style="text-decoration: underline; color: rgb(0, 0, 0);">`Croquis:
 
 [![image (3).png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/image-3.png)*Figure 4: Démonstration du mécanisme de ciseaux*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-3.png)
 
-<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0); text-decoration: underline;">Avantages:</span></span>
+`<span style="text-decoration: underline;"><span style="color: rgb(0, 0, 0); text-decoration: underline;">`Avantages:
 
 - Le mécanisme "Scissors" permet d'avoir un espace d'écriture plus grand que les systèmes à roues motorisées ou à bielle-manivelle. Cela est dû à la tendance du mécanisme à s'étendre.
 - De plus, ce mécanisme est particulièrement adapté à la création de cercles. La rotation des bras permet de dessiner des cercles de différentes tailles avec précision.
 - En outre, le mécanisme "Scissors" permet de dessiner des lignes droites très précises dans le sens du mouvement du stylo.
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Inconvénients:</span>
+`<span style="text-decoration: underline; color: rgb(0, 0, 0);">`Inconvénients:
 
 - Malheureusement, cette solution présente également un inconvénient. Les mouvements étant plutôt révolutionnaires, créer des lignes droites verticales du stylo semble limité et dans certains cas extrêmes impossible.
 
 #### Idée 4 - Point d'intersection
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Principe:</span>
+`<span style="text-decoration: underline; color: rgb(0, 0, 0);">`Principe:
 
 Le robot sera doté d'un mécanisme de ciseaux alimenté par deux servomoteurs positionnés aux coins de la base d'écriture. Chacun entraînera la rotation d'une poutre, permettant des mouvements de glissement dans les deux directions du vecteur r de rotation,. Le point d'intersection des deux poutres (créant ainsi une liaison glissière complexe) serait équipé du stylo, assurant une couverture totale de la feuille grâce à cette configuration ingénieuse.
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Croquis:</span>
+`<span style="text-decoration: underline; color: rgb(0, 0, 0);">`Croquis:
 
 [![File_000.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/scaled-1680-/file-000.png)*Figure 5: Une conception de l'idée de point d'intersection*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-02/file-000.png)
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Inconvénients:</span>
+`<span style="text-decoration: underline; color: rgb(0, 0, 0);">`Inconvénients:
 
 - L'effort tangent au mouvement du stylo généré par une poutre sur l'autre serait extrêmement important, dépassant probablement les limites de faisabilité. La nécessité d'un glissement ultra-lisse, sans aucun frottement, et d'une précision extrême dans les mouvements représente un défi technique considérable.
 
 #### Idée 5 - Robot type SCARA
 
-<span style="text-decoration: underline; color: rgb(0, 0, 0);">Principe:</span>
+`<span style="text-decoration: underline; color: rgb(0, 0, 0);">`Principe:
 
 On a pensé de faire un robot qui a deux axes de rotation verticales et une axe de rotation horizontale. En fait, il y aura deux rotations autour de deux axes Z (Z1 et Z2) verticales et une troisième rotation autour de Z3 qui est perpendiculaire au axe (Z2).
 
-<span style="text-decoration: underline;">Croquis:</span>
+`<span style="text-decoration: underline;">`Croquis:
 
 [![image (2).png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/image-2.png)*Figure 6: croquis du robot avec 2 dégrées de liberté*](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-2.png)
 
-<span style="text-decoration: underline;">Avantages:</span>
+`<span style="text-decoration: underline;">`Avantages:
 
 - C'est un modèle connu du groupe, la partie mathématique est donc plus simple à réaliser
 - Il y a beaucoup de manières de retirer de la matière avec une modélisation intelligente.
 
-<span style="text-decoration: underline;">Inconvénients:</span>
+`<span style="text-decoration: underline;">`Inconvénients:
 
 - Poids excessive sur l'endroit du moteur 2, quelque chose qui pourrait impacter la précision de designs. Idéalement, on voudrait trouver une solution qui permettra de déplacer ce moteur sur le corps de la base principale du robot (où se trouve le moteur 1) en utilisant les outils qu'on a à notre disposition.
 
 #### Idée 6 - Robot parallélépipède
 
-<span style="text-decoration: underline;">Principe:</span>
+`<span style="text-decoration: underline;">`Principe:
 
 Inspiré par le mécanisme du robot type SCARA, on avait une réflexion: "Pourquoi on ne déplace pas le moteur de la 2éme rotation (moteur2), sur le même axe de rotation qui celui du moteur 1. Le résultat du mouvement sera la même tout en ayant déplacé la majorité du poids sur le corps principale du robot.
 
-<span style="text-decoration: underline;">Croquis:</span>
+`<span style="text-decoration: underline;">`Croquis:
 
 [![image.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/Km2image.png)Figure 7: Croquis du robot parallélépipède](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/Km2image.png)
 
-<span style="text-decoration: underline;">Avantages:</span>
+`<span style="text-decoration: underline;">`Avantages:
 
 - Moins de poids sur les articulations mobiles du robot =&gt; meilleur précision par rapport l'idée d'avant.
 
-<span style="text-decoration: underline;">Inconvénients:</span>
+`<span style="text-decoration: underline;">`Inconvénients:
 
 - Selon la manière d'expression du modèle géométrique direct, le calcul du modèle géométrique inverse pourrait être compliqué.
 - La modélisation des quelques pièces unique pour la réalisation de ce type du robot pourrait augmenter le temps de fabrication et l'utilisation de matière.
@@ -227,26 +228,26 @@ Inspiré par le mécanisme du robot type SCARA, on avait une réflexion: "Pourqu
 
 Ayant effectué une évaluation approfondie des différentes alternatives, notre équipe a choisi de privilégier le développement d'un robot type parallélépipède pour la prochaine étape du projet. Cette décision est basée sur plusieurs points clés :
 
-1. Robot de roues  
-    
-    - Pour s'assurer de la validité de la trajectoire, il faudrait l’équiper de capteurs odométrique. Nous ne disposons pas de ce matériel
-    - L'utilisation des servomoteurs empêcherait de faire rouler le robot indéfiniment. Cela ne serait pas un problème avec l'exercice 1. L'exercice 2 pourrait se révéler impossible à faire (Prenons par exemple un cas hyperbolique et fantaisiste: La forme à dessiner au joystick est une réplique de la Joconde. Le robot ne pourrait jamais faire ceci)
-2. Robot XY  
-    
-    - Le système de bielle manivelle pourrait se révéler trop massif pour le robot.
-    - La solution consommerait beaucoup de matière
-3. Robot "scissors"  
-    
-    - Selon la mécanique de la pièce, la création des lignes droites perpendiculaires du stylo n'est pas toujours possible à cause des mouvements révolutionnaires du mécanisme
-    - Les déplacement sont limités à des trajectoires bien précises, ce qui rend le contrôle au joystick frustrant.
-4. Robot intersection  
-    
-    - Il s'agit d'une idée très complète. Cependant, lorsque l'effecteur se trouve à l'extrémité des deux axes de guidage, il faut exercer une force massive pour l'en sortir et le faire revenir près des moteurs.  
-        Nous pourrions contourner ce problème en faisant en sorte que les axes soient bien plus grand que la zone de travail. Mais: 
-        - Cela impliquerait un ajout de matière, et donc de masse
-        - Cela n'empêcherait pas un utilisateur au joystick de bloquer le robot
-5. Robot type SCARA 
-    - Il s'agit de notre idée de départ de base, mais à la découverte de l'idée numéro 6 qui nous permettra de déplacer les deux moteur sur le corps de la base du robot, on a décidé de développer le robot type parallélépipède.
+1. Robot de roues
+
+   - Pour s'assurer de la validité de la trajectoire, il faudrait l’équiper de capteurs odométrique. Nous ne disposons pas de ce matériel
+   - L'utilisation des servomoteurs empêcherait de faire rouler le robot indéfiniment. Cela ne serait pas un problème avec l'exercice 1. L'exercice 2 pourrait se révéler impossible à faire (Prenons par exemple un cas hyperbolique et fantaisiste: La forme à dessiner au joystick est une réplique de la Joconde. Le robot ne pourrait jamais faire ceci)
+2. Robot XY
+
+   - Le système de bielle manivelle pourrait se révéler trop massif pour le robot.
+   - La solution consommerait beaucoup de matière
+3. Robot "scissors"
+
+   - Selon la mécanique de la pièce, la création des lignes droites perpendiculaires du stylo n'est pas toujours possible à cause des mouvements révolutionnaires du mécanisme
+   - Les déplacement sont limités à des trajectoires bien précises, ce qui rend le contrôle au joystick frustrant.
+4. Robot intersection
+
+   - Il s'agit d'une idée très complète. Cependant, lorsque l'effecteur se trouve à l'extrémité des deux axes de guidage, il faut exercer une force massive pour l'en sortir et le faire revenir près des moteurs.Nous pourrions contourner ce problème en faisant en sorte que les axes soient bien plus grand que la zone de travail. Mais:
+     - Cela impliquerait un ajout de matière, et donc de masse
+     - Cela n'empêcherait pas un utilisateur au joystick de bloquer le robot
+5. Robot type SCARA
+
+   - Il s'agit de notre idée de départ de base, mais à la découverte de l'idée numéro 6 qui nous permettra de déplacer les deux moteur sur le corps de la base du robot, on a décidé de développer le robot type parallélépipède.
 
 ### **Étape 2: Conception détaillée**
 
@@ -268,7 +269,7 @@ Les équations trouvées dans le modèle parallélépipède étant impossible à
 
 #### Modèle géométrique directe (complet)
 
-Calculant T<sub>0-&gt;1</sub>, T<sub>1-&gt;2</sub>, T<sub>2-&gt;effector</sub>, ainsi que T<sub>0-&gt;effector</sub>.
+Calculant T`<sub>`0-&gt;1`</sub>`, T`<sub>`1-&gt;2`</sub>`, T`<sub>`2-&gt;effector`</sub>`, ainsi que T`<sub>`0-&gt;effector`</sub>`.
 
 [![equations-scara-1.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/iNGequations-scara-1.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/equations-scara-1.png)
 
@@ -332,7 +333,6 @@ Notre objectif principal était de modéliser le robot selon un design à la foi
 
 [![displayRobot.gif](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/displayrobot.gif)Figure 9: Démonstration du mécanisme du robot LineaScribe](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/displayrobot.gif)
 
-
 ##### Sous-assemblages
 
 1. Bâti support
@@ -360,33 +360,31 @@ Elles sont également entièrement conceptualisées pour la découpe laser (3 co
 
 Son rôle et la précision d'application sont essentiels pour le bon fonctionnement du robot. Il nous permet d'obtenir la distance correcte en parallélisme, comme indiqué dans le design ci-dessous. Il est entièrement créé en utilisant la découpe laser (2 couches de 3 mm).
 
-[![Screenshot 2024-03-09 at 8.06.04 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/8vMscreenshot-2024-03-09-at-8-06-04-pm.png)Figure 11: Focalisation sur la pièce "pivot joint"](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/8vMscreenshot-2024-03-09-at-8-06-04-pm.png)
+[![Screenshot 2024-03-09 at 8.06.04 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/8vMscreenshot-2024-03-09-at-8-06-04-pm.png)Figure 11: Focalisation sur la pièce &#34;pivot joint&#34;](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/8vMscreenshot-2024-03-09-at-8-06-04-pm.png)
 
 ##### Pivot motor
 
 C'est la seule pièce qui est modélisée pour l'impression 3D. Son rôle est le même que celui de la pièce "pivot joint". Elle est directement montée sur le moteur du bas (moteur 2). Pour renforcer la partie de la pièce qui recevra les forces de frottement du stylo, un triangle de renfort a été ajouté, comme vous pouvez le voir ci-dessous.
 
-[![Screenshot 2024-03-09 at 8.12.07 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-12-07-pm.png)Figure 12: Triangle de renfort de "pivot motor"](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-12-07-pm.png)
+[![Screenshot 2024-03-09 at 8.12.07 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-12-07-pm.png)Figure 12: Triangle de renfort de &#34;pivot motor&#34;](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-12-07-pm.png)
 
 <p class="callout info">L'axe centrique est un détail et il n'est pas requis pour le fonctionnement correct du mécanisme.</p>
 
 <table border="1" id="bkmrk--13" style="border-collapse: collapse; width: 100%; height: 191.422px;"><colgroup><col style="width: 33.3539%;"></col><col style="width: 33.3539%;"></col><col style="width: 33.3539%;"></col></colgroup><tbody><tr style="height: 191.422px;"><td style="border-style: none; height: 191.422px;">[![Screenshot 2024-03-09 at 8.11.43 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-11-43-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-11-43-pm.png)</td><td style="height: 191.422px; border-style: none;">[![Screenshot 2024-03-09 at 8.12.13 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-12-13-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-12-13-pm.png)</td><td style="height: 191.422px; border-style: none;">[![Screenshot 2024-03-09 at 8.12.22 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-09-at-8-12-22-pm.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-09-at-8-12-22-pm.png)</td></tr></tbody></table>
 
-#####  Axe d'effecteur (billette Emax)
+##### Axe d'effecteur (billette Emax)
 
 Il s'agit de l'axe qui supporte l'outil de l'effecteur. Il est guidé par les axes parallèles et mis en position (MIP) par la pièce "pivot joint". Le moteur est mis en position grâce à "Pignon Servo Emax". C'est la plateforme sur laquelle on fixe le moteur Emax comme on peut observer ci-dessous :
 
-  
-  
 [![Screenshot 2024-03-10 at 7.50.44 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-10-at-7-50-44-pm.png)Figure 13: Billette Emax en assemblage avec le moteur 3 (Emax)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-10-at-7-50-44-pm.png)
 
-[![Screenshot 2024-03-10 at 8.59.03 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-10-at-8-59-03-pm.png)Figure 14: Modèle d'un pignon servo Emax](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-10-at-8-59-03-pm.png)
+[![Screenshot 2024-03-10 at 8.59.03 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-10-at-8-59-03-pm.png)Figure 14: Modèle d&#39;un pignon servo Emax](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-10-at-8-59-03-pm.png)
 
 ##### Effecteur
 
 L'outil de l'effecteur est l'élément terminal du robot qui entre en contact direct avec la surface d'écriture. Son rôle principal est de tracer des lignes en utilisant un stylo. Voici la deuxième pièce en impression 3D :
 
-[![Screenshot 2024-03-10 at 9.00.51 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-10-at-9-00-51-pm.png)Figure 15: La pièce qui va soutenir l'outil (le stylo dans notre cas)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-10-at-9-00-51-pm.png)
+[![Screenshot 2024-03-10 at 9.00.51 PM.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/screenshot-2024-03-10-at-9-00-51-pm.png)Figure 15: La pièce qui va soutenir l&#39;outil (le stylo dans notre cas)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/screenshot-2024-03-10-at-9-00-51-pm.png)
 
 ##### Solidworks
 
@@ -444,25 +442,25 @@ servo2.write(90);
 
 ##### Organigramme:
 
-<span style="text-decoration: underline;">Programme principal (Setup+Loop)</span>
+`<span style="text-decoration: underline;">`Programme principal (Setup+Loop)
 
 ![Organigramme_Principal.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/organigramme-principal.png)
 
-<span style="text-decoration: underline;">Ligne Droite</span>
+`<span style="text-decoration: underline;">`Ligne Droite
 
 [![Straight Line.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/straight-line.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/straight-line.png)
 
-<span style="text-decoration: underline;">Ligne Pointillées</span>
+`<span style="text-decoration: underline;">`Ligne Pointillées
 
-<span style="text-decoration: underline;">[![Dotted Line.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/dotted-line.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/dotted-line.png)</span>
+`<span style="text-decoration: underline;">`[![Dotted Line.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/dotted-line.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/dotted-line.png)
 
-<span style="text-decoration: underline;">Cercle</span>
+`<span style="text-decoration: underline;">`Cercle
 
-<span style="text-decoration: underline;">[![Cercle.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/cercle.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/cercle.png)</span>
+`<span style="text-decoration: underline;">`[![Cercle.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/cercle.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/cercle.png)
 
-<span style="text-decoration: underline;">Cercle Pointillés</span>
+`<span style="text-decoration: underline;">`Cercle Pointillés
 
-<span style="text-decoration: underline;">[![Dot Circle.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/dot-circle.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/dot-circle.png)</span>
+`<span style="text-decoration: underline;">`[![Dot Circle.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/dot-circle.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/dot-circle.png)
 
 L'organigramme des fonctions carré et joystick a changé récemment et sera posté plus tard
 
@@ -571,7 +569,7 @@ void dotted_line(double *x_start, double *y_start, int length, double angle, flo
 
   //control for the desired length
   while(i < length) {
-    
+  
     //get into writing position
     pen_control(DOWN_, &penstate);
     delay(100);
@@ -625,7 +623,7 @@ void circle(double x_center, double y_center, double angle_start, double angle, 
 }
 ```
 
-##### Designer un cercle en pointilles 
+##### Designer un cercle en pointilles
 
 ```c++
 /* Designs a dotted circle in a specific radius and a specific starting point */
@@ -642,7 +640,7 @@ void dotted_circle(double x_center, double y_center, double angle_space, double 
   //It's a recursive loop leading to a 360 degrees circle that calls circle function with a starting and final point
   double i=0.0;
   while(i < 360) {
-    
+  
     pen_control(DOWN_, &penstate);
     delay(200);
     circle(x_center, y_center,i, angle_dot+i, radius, x, y, 1, 10);
@@ -706,7 +704,7 @@ Mode manuelle permet à l'utiliser de contrôler le robot via le Joystick tout e
     delay(500);
 
     double coef= 0.0003;
-    
+  
     while(digitalRead(pinbutton1)==1){
       //If the button is pressed then the effector is swithcing mode. For instance, if it was in writing position it goes UP and if it was UP then it gets into writing position.
       if (digitalRead(pinbutton5) == 1) {
@@ -743,8 +741,7 @@ Mode manuelle permet à l'utiliser de contrôler le robot via le Joystick tout e
   }
 ```
 
-##### Logique du Joystick en Processing  
-
+##### Logique du Joystick en Processing
 
 Les données sont traitées à l'aide d'un programme de traitement qui permet de pré-visualiser ce que vous souhaitez concevoir puis les données sont envoyées via le port série à la carte afin de contrôler les moteurs.
 
@@ -760,11 +757,11 @@ void Joystick(double *x, double *y)
   int out1=0;
   while(out==0){
 
-    //We check if we read the values ​​of the Joystick where the user decided to stop (On verifie si on Lit les valeurs du Joystick ou l'utilisateur a decide d'arrete)
+    //We check if we read the values of the Joystick where the user decided to stop (On verifie si on Lit les valeurs du Joystick ou l'utilisateur a decide d'arrete)
     if (Serial.available() > 0) {
       String response = Serial.readStringUntil('\n'); 
       response.trim();  // Remove any leading or trailing whitespace
-      
+    
       if (response.equals("Done")) {
         //digitalWrite(13,LOW);
         break;  // Stop sending data to processing
@@ -785,8 +782,8 @@ void Joystick(double *x, double *y)
     Serial.print(buttonval1); 
     Serial.print("\t");
     Serial.println(buttonval2);
-    
-    //This loop prevents the overlap of several values ​​given that the frequency of sending data from the Arduino is higher than the frequency of receiving processing (Cette boucle empeche le chevauchement de plusieur valeur etant donne que la frequence d';envoi de donne de l'arduino est plus eleve que la frequence de recoit de processing)
+  
+    //This loop prevents the overlap of several values given that the frequency of sending data from the Arduino is higher than the frequency of receiving processing (Cette boucle empeche le chevauchement de plusieur valeur etant donne que la frequence d';envoi de donne de l'arduino est plus eleve que la frequence de recoit de processing)
     //We therefore wait until the data is read by processing before sending another data (On attend donc jusqu'a ce que la donnee est bien lu par processing avant d'envoyer une autre donne)
     out1=0;
     while (out1 == 0) {
@@ -794,7 +791,7 @@ void Joystick(double *x, double *y)
       if (Serial.available() > 0) {
         String response = Serial.readStringUntil('\n'); 
         response.trim();  // Remove any leading or trailing whitespace
-        
+      
         if (response.equals("Done")) {
           out=1; //get out of the loop  //checck  andif we really get out of the loop check if it doesnt give another line of data after i wanted to start
           out1=1;
@@ -817,7 +814,7 @@ void Joystick(double *x, double *y)
       int depthIndex = 0;
 
       String buffer = ""; // Buffer to hold the float string
-      
+    
       //premier element
       int i = 0;
       while(1){
@@ -908,8 +905,7 @@ void Joystick(double *x, double *y)
 }
 ```
 
-##### Initialisation  
-
+##### Initialisation
 
 ```c++
 void setup() {
@@ -1108,7 +1104,7 @@ void loop() {
     delay(500);
 
     double coef= 0.0003;
-    
+  
     while(digitalRead(pinbutton1)==1){
       //If the button is pressed then the effector is swithcing mode. For instance, if it was in writing position it goes UP and if it was UP then it gets into writing position.
       if (digitalRead(pinbutton5) == 1) {
@@ -1147,7 +1143,7 @@ void loop() {
 }
 ```
 
-### **Améliorations possibles** 
+### **Améliorations possibles**
 
 Il existe quelques améliorations qu'on pourrait effecteur pour que le prototype du robot LineaScribe soit plus performant et efficace.
 
@@ -1156,8 +1152,7 @@ Il existe quelques améliorations qu'on pourrait effecteur pour que le prototype
 3. Utilisez beaucoup moins de boutons pour basculer entre les différents modes de fonctionnement via la détection du nombre d'appuis sur un bouton par exemple.
 4. Pour obtenir un cercle parfait, il faudrait modifier l’angle d’écriture du stylo sur la moitié du cercle. De cette façon, il n’y aura pas de dimensionnement. Ceci s'explique par le fait que les coordonnées calculées concernent le point de montage de notre effecteur (outil) et non jusqu'au point de contact avec la surface du papier.
 
-### **Journal de bord / Calendrier**  
-
+### **Journal de bord / Calendrier**
 
 *Avancée du projet à chaque étape, difficultés rencontrées, modifications et adaptations*
 
