@@ -320,7 +320,11 @@ Sur notre schéma électronique il y a un bouton qui permet de changer entre mod
 - Le stylo écrit ou pas.
 - On fait un dessin avec le joystick qu'on visualise sur l'écran de l'ordinateur et on tape le bouton pour confirmer le dessin afin qu'il est créé par le robot.
 
-[![LineaScript.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/lineascript.png)Figure 8: Schéma électronique V1.5.0](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/image-4.png)
+[![LineaScript.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/CFNlineascript.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/CFNlineascript.png)
+
+[Figure 8: Schéma électronique V1.5.0](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/CFNlineascript.png)
+
+Une version optimisée pour plus de clarté et incluant les fonctions carré et joystick processing sera publiée prochainement
 
 #### Modélisation
 
@@ -422,133 +426,737 @@ Pour utiliser le fichier il suffit d'appeler la fonction MGI\_matlab, et passer 
 
 [![Demo.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/demo.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/demo.png)
 
+#### Pre-requis
+
+Lors du montage du robot, les moteurs doivent être calibrés. Nous vous conseillons de mettre les moteurs en position 0 degré (servo 1) et 90 degrés (servo 2). Ensuite, levez le bras à une position de 90 degrés. Attention, servo1 et servo2 sont les références dans le code disponible ci-dessous.
+
+```c++
+void setup()
+{
+  ...
+servo1.write(0);
+servo2.write(90);
+  ...
+}
+```
+
 #### Pistes de programmation
 
 ##### Organigramme:
 
-[![FlowChart copy.drawio-1.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/scaled-1680-/flowchart-copy-drawio-1.png)Figure 16: Pistes de programmation version 1.0.0](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-03/flowchart-copy-drawio-1.png)
+<span style="text-decoration: underline;">Programme principal (Setup+Loop)</span>
 
-Document PDF V1.0.0: [FlowChart.pdf](https://wiki.fablab.sorbonne-universite.fr/BookStack/attachments/580)
+![Organigramme_Principal.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/organigramme-principal.png)
+
+<span style="text-decoration: underline;">Ligne Droite</span>
+
+[![Straight Line.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/straight-line.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/straight-line.png)
+
+<span style="text-decoration: underline;">Ligne Pointillées</span>
+
+<span style="text-decoration: underline;">[![Dotted Line.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/dotted-line.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/dotted-line.png)</span>
+
+<span style="text-decoration: underline;">Cercle</span>
+
+<span style="text-decoration: underline;">[![Cercle.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/cercle.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/cercle.png)</span>
+
+<span style="text-decoration: underline;">Cercle Pointillés</span>
+
+<span style="text-decoration: underline;">[![Dot Circle.png](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/scaled-1680-/dot-circle.png)](https://wiki.fablab.sorbonne-universite.fr/BookStack/uploads/images/gallery/2024-05/dot-circle.png)</span>
+
+L'organigramme des fonctions carré et joystick a changé récemment et sera posté plus tard
 
 #### Programmation
 
-<p class="callout info">The program needs to be tested and be revised from every member of the group. Currently it respectes the "pistes de programmation" defined previously.  
-  
-Moreover, the program is not complete. This is only the base. Currently there is no control of the effector and it's tool.</p>
-
-V1.0.0
+##### Application du modèle géométrique inverse pour calculer les angles de contrôle de moteurs
 
 ```c++
-#include <Servo.h>
+/* Takes a cartesien position (x,y) and updates the angles teta1 and teta2 that control the two motors (located on the same r) */
+void get_angles(double x, double y, float L1, float L2, double* teta1, double* teta2){
 
-const int buttonPin = 8;
-const int ledAutoPin = 10;
-const int ledManualPin = 9;
-const int servo1Pin = 6;
-const int servo2Pin = 5;
-const int servo3Pin = 3;
-const int joystickButtonPin = 7;
-const int verticalJoystickPin = A1;
-const int horizontalJoystickPin = A0;
+  //Distance between the center of the robot and the starting point of the writing area
+  x+=dx;
+  y+=dy;
 
-Servo servo1;
-Servo servo2;
-Servo servo3;
+  //Geometric inveresed model available under teh section "Robot type SCARA"
+  co2 = (x*x+y*y-L1*L1-L2*L2)/(2*L1*L2);
+  teta2prec = atan2((-sqrt(1-co2*co2)),co2); //The root decides the orientation according to the configuration
 
-int buttonState = 0;
-int previousButtonState = 0;
-int clickCount = 0;
-int currentState = 0;
+  //Calculating the angle 1
+  *teta1 = atan2(y,x) - atan2((L2*sin(teta2prec)),(L1+L2*cos(teta2prec)));
 
-int trajectoryPoints[100][2];  // Array to store trajectory points
-int trajectoryIndex = 0;
+  teta2prec = teta2prec*180/pi; //rad to degrees 
+  *teta1 = *teta1*180/pi;
+  *teta2 = *teta2*180/pi;
 
-void setup() {
-  pinMode(buttonPin, INPUT_PULLUP);
-  pinMode(ledAutoPin, OUTPUT);
-  pinMode(ledManualPin, OUTPUT);
-  pinMode(joystickButtonPin, INPUT_PULLUP);
+  //teta2 is the final corrected angle according to "Specifications de notre modele" available on the Robot's documentation -> voir wiki 
+  *teta2=-abs(teta2prec)+*teta1+180;
 
-  servo1.attach(servo1Pin);
-  servo2.attach(servo2Pin);
-  servo3.attach(servo3Pin);
+  *teta2 = 180-*teta2;
 }
+```
 
-void loop() {
-  checkButton();
-  if (clickCount == 1) {
-    // Change state on single press
-    currentState = (currentState == 1) ? 2 : 1;
-    clickCount = 0;
-  } else if (clickCount == 2) {
-    // Execute current state on double press
-    clickCount = 0;
-    if (currentState == 1) {
-      runAutomaticProgram();
-      blinkLED(ledAutoPin);
-    } else if (currentState == 2) {
-      if (digitalRead(joystickButtonPin) == LOW) {
-        executeTrajectory();
-        blinkLED(ledManualPin);
-      }
+##### Control du stylo
+
+```c++
+/* Controls the tool's position [choose between UP and DOWN] */
+void pen_control(int control, int *penstate) //Down, up, swithc state
+{
+  if (control == DOWN) //write with pen [pen is down]
+  {
+    servo3.writeMicroseconds(pen_down); 
+    *penstate=0;
+  }
+  if (control == DOWN_) //write with pen [pen is down]
+  {
+    servo3.writeMicroseconds(pen_down_); 
+    *penstate=0;
+  }
+  else if (control == UP) //disable writing [pen is up]
+  {
+    *penstate=1;
+    servo3.writeMicroseconds(pen_up);
+  }
+  else if (control == UP_) //disable writing [pen is up]
+  {
+    *penstate=1;
+    servo3.writeMicroseconds(pen_up_);
+  }
+  else if (control == SWITCH) //disable writing [pen is up]
+  {
+    switch(*penstate){
+      case 0:
+        servo3.writeMicroseconds(pen_up);
+        *penstate=1;
+        break;
+      case 1:
+        servo3.writeMicroseconds(pen_down);
+        *penstate=0;
+        break;
     }
   }
-  // Light both LEDs while waiting for a state selection
-  digitalWrite(ledAutoPin, HIGH);
-  digitalWrite(ledManualPin, HIGH);
-}
-
-void checkButton() {
-  buttonState = digitalRead(buttonPin);
-  if (buttonState != previousButtonState && buttonState == LOW) {
-    clickCount++;
-  }
-  previousButtonState = buttonState;
-  // Turn off LEDs after button press is detected
-  digitalWrite(ledAutoPin, LOW);
-  digitalWrite(ledManualPin, LOW);
-}
-
-void runAutomaticProgram() {
-  // Your code to move the servos in a predefined way
-  // Example:
-  for (int i = 0; i < 10; i++) {
-    servo1.write(i * 10);
-    servo2.write(90 - i * 5);
-    servo3.write(180 - i * 15);
-    delay(500);
-  }
-}
-
-void captureTrajectory() {
-  trajectoryPoints[trajectoryIndex][0] = analogRead(verticalJoystickPin);
-  trajectoryPoints[trajectoryIndex][1] = analogRead(horizontalJoystickPin);
-  trajectoryIndex++;
-  if (trajectoryIndex >= 100) {
-    trajectoryIndex = 0;
-  }
-}
-
-void executeTrajectory() {
-  for (int i = 0; i < 100; i++) {
-    // Use trajectoryPoints[i][0] and trajectoryPoints[i][1] to move servos
-    // Example:
-    servo1.write(trajectoryPoints[i][0]);
-    servo2.write(trajectoryPoints[i][1]);
-    servo3.write(map(trajectoryPoints[i][1], 0, 1023, 0, 180));
-    delay(100);
-  }
-}
-
-void blinkLED(int ledPin) {
-  for (int i = 0; i < 5; i++) {
-    digitalWrite(ledPin, HIGH);
-    delay(100);
+  else
+  {
+    printf("An error occured on controling the pen\n");
   }
 }
 ```
 
-## Journal de bord / Calendrier  
+##### Designer une ligne
+
+```c++
+/* Draws a straight line in a specific length and to a given angle */
+void straight_line(double *x_start, double *y_start, float length, double angle)
+{  
+
+  //Note: We divide the distance in multiple subpoints to be acquired. The greater the number, the most precision we can achieve of course with some limitations
+  for (double i = 0; i < length*900; i++)
+  {
+    *x_start = *x_start + cos(angle)/900; //Current position + shift  
+    *y_start = *y_start + sin(angle)/900;
+    get_angles(*x_start,*y_start,L1,L2,&teta1, &teta2); //calculation of motors' angles
+    servo1.write(teta1); //Sending data to the motors
+    servo2.write(teta2);  
+    delay(1);
+  }
+}
+```
+
+##### Designer une ligne en pointilles
+
+```c++
+/* Designs a dotted line in a specific length */
+void dotted_line(double *x_start, double *y_start, int length, double angle, float dot_length, float space_length) {
+  float i=0;
+
+  //control for the desired length
+  while(i < length) {
+    
+    //get into writing position
+    pen_control(DOWN_, &penstate);
+    delay(100);
+    straight_line(x_start,y_start,dot_length, angle);
+
+
+    i=i+dot_length; //The length that should write a line
+    if(i>=length) break;
+
+    //Pen is on UP_ state
+    pen_control(UP_, &penstate);
+    delay(100);
+    straight_line(x_start,y_start,space_length, angle);
+    i = i + space_length; //adding the space that shouldn't write anything on the paper
+
+  }
+}
+```
+
+##### Designer un cercle
+
+```c++
+/* Designing a circle in a specific radius and a specific starting point */
+void circle(double x_center, double y_center, double angle_start, double angle, double radius, double *x, double *y, int init, int res)
+{
+
+  //Placement in a specific starting point
+  if(init==0){
+    *x = x_center + (radius * cos(radians(angle_start)));
+    *y = y_center + (radius * sin(radians(angle_start)));
+    get_angles(*x,*y,L1,L2,&teta1, &teta2);
+    servo1.write(teta1); 
+    servo2.write(teta2); 
+    delay(1000);
+
+    //Get into writing position
+    pen_control(DOWN,&penstate);
+    delay(500);
+  }
+  
+  //Repetead calculation different points between a starting angle and a final angle
+  for (double i = (angle_start*res); i < (angle*res); i++)
+  {
+    *x = x_center + (radius * cos(radians(i/res))); //Formula of finding the position of a point is based on the tan function decomposed in x and y axis
+    *y = y_center + (radius * sin(radians(i/res)));
+    get_angles(*x,*y,L1,L2,&teta1, &teta2); //Calculation of angles for the motors
+    servo1.write(teta1); //Sending data to the motors
+    servo2.write(teta2);
+    delay(1);  
+  }
+}
+```
+
+##### Designer un cercle en pointilles 
+
+```c++
+/* Designs a dotted circle in a specific radius and a specific starting point */
+void dotted_circle(double x_center, double y_center, double angle_space, double angle_dot, double radius, double *x, double *y)
+{
+  
+  *x = x_center + (radius * cos(radians(0)));
+  *y = y_center + (radius * sin(radians(0)));
+  get_angles(*x,*y,L1,L2,&teta1, &teta2);
+  servo1.write(teta1); 
+  servo2.write(teta2); 
+  delay(1000);
+
+  //It's a recursive loop leading to a 360 degrees circle that calls circle function with a starting and final point
+  double i=0.0;
+  while(i < 360) {
+    
+    pen_control(DOWN_, &penstate);
+    delay(200);
+    circle(x_center, y_center,i, angle_dot+i, radius, x, y, 1, 10);
+    delay(200);
+
+    i = i + angle_dot; //update of the current position - required to verify of a circle of 360 degress has been designed
+
+    if(i>=360) break;
+
+    //Between delays we chage writing mode in order to create a dotted effect
+    pen_control(UP, &penstate);
+    delay(200);
+    circle(x_center, y_center,i, (angle_space+i), radius, x, y, 1, 10);
+    i = i + angle_space;
+    delay(200);
+
+  }
+}
+```
+
+##### Designer un carre
+
+```c++
+/* Designs a square of a given length and in a given angle */
+void square(double *x, double *y, int length, int angle)
+{
+
+  //Square is composed of four straight lines of a given length and they are vertical between them
+ straight_line(x,y,length, radians(angle));
+ delay(1000);
+ straight_line(x,y,length, radians(angle+90));
+ delay(1000);
+ straight_line(x,y,length, radians(angle+180));
+ delay(1000);
+ straight_line(x,y,length, radians(angle+270));
+ delay(1000);
+}
+```
+
+##### Logique du Joystick en mode manuelle
+
+Mode manuelle permet à l'utiliser de contrôler le robot via le Joystick tout en appuyant sur un bouton qui permet de contrôler si le stylo est en mode d'écriture ou non. Cette fonctionnalité existe sur la boucle principale comme un mode de fonctionnement. Pour rentrer dans ce mode, il suffit de presser une seule fois sur le Joystick, de même pour en sortir.
+
+```c++
+//Manual control of the robot using joystic
+  if (buttonState5 == 0) {
+    //Allows a smooth operation when a button is pushed (detect one time the tap)
+    while (digitalRead(pinbutton1)==0){}
+
+    digitalWrite(ledPin, HIGH);
+    pen_control(UP,&penstate);
+    x=0.0;
+    y=0.0;
+    delay(500);
+    get_angles(x,y,L1,L2,&teta1, &teta2);
+    servo1.write(teta1); 
+    servo2.write(teta2);  
+    delay(1000);
+
+    pen_control(DOWN,&penstate);
+    delay(500);
+
+    double coef= 0.0003;
+    
+    while(digitalRead(pinbutton1)==1){
+      //If the button is pressed then the effector is swithcing mode. For instance, if it was in writing position it goes UP and if it was UP then it gets into writing position.
+      if (digitalRead(pinbutton5) == 1) {
+        while (digitalRead(pinbutton5)==1){}
+        pen_control(SWITCH,&penstate);
+      }
+
+      // Read analog values
+      xtemp = int(512.0 - analogRead(pinx));
+      ytemp = int(512.0 - analogRead(piny));
+
+      // Apply dead zone for small movements
+      if (abs(xtemp) <= 100) xtemp = 0;
+      if (abs(ytemp) <= 100) ytemp = 0;
+
+      // Update x and y coordinates
+      x += xtemp * coef;
+      y += ytemp * coef;
+
+      Serial.print(x);
+      Serial.print("\t");
+      Serial.println(y);
+
+      get_angles(x,y,L1,L2,&teta1, &teta2); //calculate motors' angles
+      servo1.write(teta1);  //send data to the motors
+      servo2.write(teta2);
+      delay(10);
+
+    }
+    while (digitalRead(pinbutton1)==0){}
+    digitalWrite(ledPin, LOW);
+    pen_control(UP,&penstate);
+    delay(500);
+  }
+```
+
+##### Logique du Joystick en Processing  
+
+
+Les données sont traitées à l'aide d'un programme de traitement qui permet de pré-visualiser ce que vous souhaitez concevoir puis les données sont envoyées via le port série à la carte afin de contrôler les moteurs.
+
+```c++
+/* Logig for joystick manipulation */
+void Joystick(double *x, double *y)
+{
+  int dimx=0;
+  int t=0;
+
+  //Sending mode on, sending joystick data to processing
+  int out=0;
+  int out1=0;
+  while(out==0){
+
+    //We check if we read the values ​​of the Joystick where the user decided to stop (On verifie si on Lit les valeurs du Joystick ou l'utilisateur a decide d'arrete)
+    if (Serial.available() > 0) {
+      String response = Serial.readStringUntil('\n'); 
+      response.trim();  // Remove any leading or trailing whitespace
+      
+      if (response.equals("Done")) {
+        //digitalWrite(13,LOW);
+        break;  // Stop sending data to processing
+      }
+    }
+    //Reading Joysticks values
+    xtemp = analogRead(pinx);
+    ytemp = analogRead(piny);
+
+    buttonval1 = 1-digitalRead(pinbutton1);
+    buttonval2 = digitalRead(pinbutton2);
+
+    //Sending Joysticks values to processing
+    Serial.print(xtemp);
+    Serial.print("\t");
+    Serial.print(ytemp);
+    Serial.print("\t");
+    Serial.print(buttonval1); 
+    Serial.print("\t");
+    Serial.println(buttonval2);
+    
+    //This loop prevents the overlap of several values ​​given that the frequency of sending data from the Arduino is higher than the frequency of receiving processing (Cette boucle empeche le chevauchement de plusieur valeur etant donne que la frequence d';envoi de donne de l'arduino est plus eleve que la frequence de recoit de processing)
+    //We therefore wait until the data is read by processing before sending another data (On attend donc jusqu'a ce que la donnee est bien lu par processing avant d'envoyer une autre donne)
+    out1=0;
+    while (out1 == 0) {
+      //digitalWrite(13,LOW);
+      if (Serial.available() > 0) {
+        String response = Serial.readStringUntil('\n'); 
+        response.trim();  // Remove any leading or trailing whitespace
+        
+        if (response.equals("Done")) {
+          out=1; //get out of the loop  //checck  andif we really get out of the loop check if it doesnt give another line of data after i wanted to start
+          out1=1;
+        }
+        else if (response.equals("Received")) out1=1;  // Exit while loop
+      }
+    }
+  }
+  
+  //tab data
+  double*** tab;
+
+  //Receive tab dimensions
+  while (true) {
+    if (Serial.available() > 0) {
+      String receivedString = Serial.readStringUntil('\n'); // Read until newline character
+      //decode data
+      int rowIndex = 0;
+      int colIndex = 0;
+      int depthIndex = 0;
+
+      String buffer = ""; // Buffer to hold the float string
+      
+      //premier element
+      int i = 0;
+      while(1){
+        char c = receivedString.charAt(i);
+        if (c == ',') {
+          dimx = buffer.toInt();
+          buffer = ""; // Reset buffer
+        }
+        else if (c == ';') {
+          t = buffer.toInt();
+          buffer = ""; // Reset buffer
+          i++;
+          break;
+        }
+        else {
+          buffer += c; // Add character to buffer
+        }
+        i++;
+      }
+
+      if(t==1) digitalWrite(ledPin, LOW);
+
+      tab = (double ***)malloc(t * sizeof(double **));
+      for (int l = 0; l < t; l++) {
+        tab[l] = malloc(2 * sizeof(double*)); //tableau de donne
+        for (int j = 0; j < 2; j++) {
+          tab[l][j] = malloc(dimx * sizeof(double));
+        }
+      }
+
+      for (i; i < receivedString.length(); i++) {
+        char c = receivedString.charAt(i);
+        if (c == ',') {
+          tab[depthIndex][rowIndex][colIndex] = buffer.toDouble();
+          colIndex++;
+          buffer = ""; // Reset buffer
+        } else if (c == ';') {
+          tab[depthIndex][rowIndex][colIndex] = buffer.toDouble();
+          rowIndex++;
+          colIndex = 0;
+          buffer = ""; // Reset buffer
+        } else if (c == '|') {
+        tab[depthIndex][rowIndex][colIndex] = buffer.toDouble();
+        depthIndex++;
+        rowIndex = 0;
+        colIndex = 0;
+        buffer = ""; // Reset buffer
+        } else {
+          buffer += c; // Add character to buffer
+        }
+      }
+      // Capture the last float value
+      tab[depthIndex][rowIndex][colIndex] = buffer.toDouble();
+
+      break;
+    }
+
+  }
+
+
+
+  for (int j = 0; j < t; j++) {
+
+      get_angles(tab[j][0][0],tab[j][1][0],L1,L2,&teta1, &teta2); //Position initiale
+      servo1.write(teta1); 
+      servo2.write(teta2);
+      delay(1000);
+
+      pen_control(DOWN,&penstate);
+      delay(500);
+
+    for (int i = 0; i < dimx; i++) {
+
+      double xt = tab[j][0][i];
+      double yt = tab[j][1][i];
+
+      if(xt!=-1 && yt!=-1){
+        get_angles(xt,yt,L1,L2,&teta1, &teta2);
+        servo1.write(teta1); 
+        servo2.write(teta2);
+        delay(100);
+      }
+    }
+    pen_control(UP,&penstate);
+    delay(500);
+  }
+
+}
+```
+
+##### Initialisation  
+
+
+```c++
+void setup() {
+  servo1.attach(9);  // attaches the servo on pin 9 to the servo object
+  servo2.attach(10); 
+  servo3.attach(11);
+  
+  //declarations of different button as input ports to detect actions
+  pinMode(pinx,INPUT);
+  pinMode(piny,INPUT);
+  pinMode(pinbutton1,INPUT_PULLUP);
+  pinMode(pinbutton2,INPUT);
+  pinMode(pinbutton3,INPUT);
+  pinMode(pinbutton4,INPUT);
+  pinMode(pinbutton5,INPUT);
+
+  //declaration of LED pin as an output port to send commands (control if it's switched on or off)
+  pinMode(ledPin,OUTPUT);
+
+  //Get into a default starting point
+  get_angles(0.0,0.0,L1,L2,&teta1, &teta2);
+  servo1.write(teta1); 
+  servo2.write(teta2);  
+
+  delay(1000);
+  //straight_line(&x,&y,15, radians(45));
+
+  //Put the effector in UP position and stand by
+  pen_control(UP,&penstate);
+
+  //Start serial communication
+  Serial.begin(9600);
+}
+```
+
+##### Boucle principale
+
+```c++
+void loop() {  
+  /* Simple implementations of existing functions for testing purposes.
+  We have only one active every time. All the others has to be commented in order to observe the robot's mouvements */
+  int buttonState1 = digitalRead(pinbutton5); // Read button 1 state
+  int buttonState2 = digitalRead(pinbutton2); // Read button 2 state
+  int buttonState3 = digitalRead(pinbutton3); // Read button 3 state
+  int buttonState4 = digitalRead(pinbutton4); // Read button 4 state
+  int buttonState5 = digitalRead(pinbutton1); // Joystick
+  int buttonState6 = digitalRead(pinbutton6); // Read button 5 state
+  int buttonState7 = digitalRead(pinbutton7); // Read button 5 state
+  //square(&x,&y,5, 0);
+
+  if (buttonState1 == 1) {
+    while (digitalRead(pinbutton5)==1){}
+    // Button 1 pressed, perform straight line
+
+    //start
+    digitalWrite(ledPin, HIGH);
+
+    pen_control(UP,&penstate);
+    x=0.0;
+    y=0.0;
+    delay(500);
+    get_angles(x,y,L1,L2,&teta1, &teta2);
+    servo1.write(teta1); 
+    servo2.write(teta2);  
+    delay(1000);
+
+    pen_control(DOWN,&penstate);
+    delay(500);
+
+    //function
+    straight_line(&x,&y,4, radians(90));
+
+    //end
+    pen_control(UP,&penstate);
+    delay(500);
+    digitalWrite(ledPin, LOW);
+  } 
+
+  if (buttonState2 == 1) {
+    while (digitalRead(pinbutton2)==1){}
+    // Button 1 pressed, perform straight line
+
+    //start
+    digitalWrite(ledPin, HIGH);
+
+    pen_control(UP,&penstate);
+    x=0.0;
+    y=0.0;
+    delay(500);
+    get_angles(x,y,L1,L2,&teta1, &teta2);
+    servo1.write(teta1); 
+    servo2.write(teta2);  
+    delay(1000);
+
+    pen_control(DOWN,&penstate);
+    delay(500);
+
+    //function
+    dotted_line(&x, &y, 4, radians(90), 0.5, 0.5);
+    //straight_line(&x,&y,5, radians(90));
+
+    //end
+    pen_control(UP,&penstate);
+    delay(500);
+    digitalWrite(ledPin, LOW);
+  } 
+
+  //circle
+  if (buttonState3 == 1) {
+    while (digitalRead(pinbutton3)==1){}
+    // Button 1 pressed, perform straight line
+
+    //start
+    digitalWrite(ledPin, HIGH);
+
+    pen_control(UP,&penstate);
+    x=1.0;
+    y=1.0;
+
+    //function
+    circle(1, 1, 0, 360, 2.5, &x, &y, 0, 12);
+    //straight_line(&x,&y,5, radians(90));
+
+    //end
+    pen_control(UP,&penstate);
+    delay(500);
+    digitalWrite(ledPin, LOW);
+  } 
+
+  //dotted circle
+  if (buttonState4 == 1) {
+    while (digitalRead(pinbutton4)==1){}
+    // Button 1 pressed, perform straight line
+
+    //start
+    digitalWrite(ledPin, HIGH);
+
+    pen_control(UP,&penstate);
+    x=1.0;
+    y=1.0;
+
+    //function
+    dotted_circle(1, 1, 10, 10, 2.5, &x, &y);
+
+    //end
+    pen_control(UP,&penstate);
+    delay(500);
+    digitalWrite(ledPin, LOW);
+  } 
+
+  //Joystick in processing
+  if (buttonState6 == 1) {
+    while (digitalRead(pinbutton6)==1){}
+    digitalWrite(ledPin, HIGH);
+    Joystick(&x,&y); 
+    digitalWrite(ledPin, LOW);
+  }
+
+  if (buttonState7 == 1) {
+    while (digitalRead(pinbutton7)==1){}
+    // Button 1 pressed, perform straight line
+
+    //start
+    digitalWrite(ledPin, HIGH);
+
+    pen_control(UP,&penstate);
+    x=1.0;
+    y=1.0;
+
+    //function
+    square(&x,&y,4, 0);
+    //straight_line(&x,&y,5, radians(90));
+
+    //end
+    pen_control(UP,&penstate);
+    delay(500);
+    digitalWrite(ledPin, LOW);
+  } 
+
+  //Manual control of the robot using joystic
+  if (buttonState5 == 0) {
+    //Allows a smooth operation when a button is pushed (detect one time the tap)
+    while (digitalRead(pinbutton1)==0){}
+
+    digitalWrite(ledPin, HIGH);
+    pen_control(UP,&penstate);
+    x=0.0;
+    y=0.0;
+    delay(500);
+    get_angles(x,y,L1,L2,&teta1, &teta2);
+    servo1.write(teta1); 
+    servo2.write(teta2);  
+    delay(1000);
+
+    pen_control(DOWN,&penstate);
+    delay(500);
+
+    double coef= 0.0003;
+    
+    while(digitalRead(pinbutton1)==1){
+      //If the button is pressed then the effector is swithcing mode. For instance, if it was in writing position it goes UP and if it was UP then it gets into writing position.
+      if (digitalRead(pinbutton5) == 1) {
+        while (digitalRead(pinbutton5)==1){}
+        pen_control(SWITCH,&penstate);
+      }
+
+      // Read analog values
+      xtemp = int(512.0 - analogRead(pinx));
+      ytemp = int(512.0 - analogRead(piny));
+
+      // Apply dead zone for small movements
+      if (abs(xtemp) <= 100) xtemp = 0;
+      if (abs(ytemp) <= 100) ytemp = 0;
+
+      // Update x and y coordinates
+      x += xtemp * coef;
+      y += ytemp * coef;
+
+      Serial.print(x);
+      Serial.print("\t");
+      Serial.println(y);
+
+      get_angles(x,y,L1,L2,&teta1, &teta2); //calculate motors' angles
+      servo1.write(teta1);  //send data to the motors
+      servo2.write(teta2);
+      delay(10);
+
+    }
+    while (digitalRead(pinbutton1)==0){}
+    digitalWrite(ledPin, LOW);
+    pen_control(UP,&penstate);
+    delay(500);
+  }
+
+}
+```
+
+### **Améliorations possibles** 
+
+Il existe quelques améliorations qu'on pourrait effecteur pour que le prototype du robot LineaScribe soit plus performant et efficace.
+
+1. Ajouter des pieds anti-friction sur la base du robot.
+2. Conceptualiser un plan de design avec possibilité d'être monté sur le châssis du robot.
+3. Utilisez beaucoup moins de boutons pour basculer entre les différents modes de fonctionnement via la détection du nombre d'appuis sur un bouton par exemple.
+4. Pour obtenir un cercle parfait, il faudrait modifier l’angle d’écriture du stylo sur la moitié du cercle. De cette façon, il n’y aura pas de dimensionnement. Ceci s'explique par le fait que les coordonnées calculées concernent le point de montage de notre effecteur (outil) et non jusqu'au point de contact avec la surface du papier.
+
+### **Journal de bord / Calendrier**  
 
 
 *Avancée du projet à chaque étape, difficultés rencontrées, modifications et adaptations*
@@ -595,4 +1203,4 @@ Finalisation du joystick. Programmation de la fonction pointillés
 
 ##### 23/05/2024
 
-Tests finaux et présentation.
+Finalisations du Joystick en mode Processing. Tests finaux et présentation.
