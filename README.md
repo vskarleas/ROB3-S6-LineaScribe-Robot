@@ -1208,4 +1208,4 @@ Finalisation du joystick. Programmation de la fonction pointillés
 
 ##### 23/05/2024
 
-Finalisations du Joystick en mode Processing. Tests finaux et présentation.
+Finalisations du Joystick en mode Processing. Tests finaux et présentation
