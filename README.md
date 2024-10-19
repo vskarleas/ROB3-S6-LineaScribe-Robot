@@ -1,5 +1,15 @@
 # Projet ROB3: Rami, Yannis, Vasilis
 
+## Description
+
+On the S6 at polytech Sorbone (Robotics Engineering major) students are required to develop a robotic system from Scratch. Below is my realisation and development of such a robot that is called LineaScribe. For more information about the project objectives for the 2023-2024 academic year, visit the following link:  
+[Robot objectives](https://wiki.fablab.sorbonne-universite.fr/BookStack/books/projets-due-2023-2024/page/le-sujet-du-projet). 
+
+You can find the Fablab Wiki link of the project [here](https://wiki.fablab.sorbonne-universite.fr/BookStack/books/projets-due-2023-2024/page/projet-rob3-rami-yannis-vasilis)
+
+
+---
+
 ## **LineaScribe Robot**
 
 ### **Informations**
